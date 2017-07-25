@@ -10,6 +10,7 @@ import ru.dmisb.photon.utils.FormatUtils;
 
 @SuppressWarnings("unused")
 public class DateAdapter {
+
     @FromJson
     Date dateFromJson(String value) {
         try {

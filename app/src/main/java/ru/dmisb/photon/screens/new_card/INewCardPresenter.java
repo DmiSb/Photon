@@ -1,6 +1,7 @@
 package ru.dmisb.photon.screens.new_card;
 
-public interface INewCardPresenter {
+@SuppressWarnings("unused")
+interface INewCardPresenter {
     void onTitleClearClick();
 
     void onTagAddClick();

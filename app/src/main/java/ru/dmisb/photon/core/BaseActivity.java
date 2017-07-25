@@ -1,23 +1,20 @@
 package ru.dmisb.photon.core;
 
 import android.app.ProgressDialog;
-import android.content.Intent;
-import android.content.pm.PackageManager;
 import android.databinding.ViewDataBinding;
 import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
 import android.os.PersistableBundle;
-import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.support.annotation.StringRes;
-import android.support.v4.content.ContextCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.view.Window;
 import android.widget.Toast;
 
 import ru.dmisb.photon.R;
 
+@SuppressWarnings("unused")
 public abstract class BaseActivity<B extends ViewDataBinding>
         extends AppCompatActivity implements IBarView {
 

@@ -18,9 +18,7 @@ public abstract class BaseScreen<T> extends ClassKey {
 
     public int getLayoutResId() {
         int layout;
-
-        Screen screen;
-        screen = this.getClass().getAnnotation(Screen.class);
+        Screen screen = this.getClass().getAnnotation(Screen.class);
         if (screen == null) {
             throw new IllegalStateException("Блин, опять забыл анатацию @Screen для " + this.getScopeName());
         } else {

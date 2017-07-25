@@ -7,6 +7,14 @@ import ru.dmisb.photon.flow.ScreenScoper;
 
 public class AlbumModel extends BaseModel {
 
+    AlbumRealm getAlbum(String id) {
+        return repository.getAlbumFromStorage(id);
+    }
+
+    void updateAlbum(AlbumDto album) {
+        repository.updateAlbum(album);
+    }
+
     //region ================= BaseModel =================
 
     @Override
@@ -17,12 +25,4 @@ public class AlbumModel extends BaseModel {
     }
 
     //endregion
-
-    AlbumRealm getAlbum(String id) {
-        return repository.getAlbumFromStorage(id);
-    }
-
-    void updateAlbum(AlbumDto album) {
-        repository.updateAlbum(album);
-    }
 }

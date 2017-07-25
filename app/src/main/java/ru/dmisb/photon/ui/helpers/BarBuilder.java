@@ -1,6 +1,5 @@
 package ru.dmisb.photon.ui.helpers;
 
-import android.support.annotation.DrawableRes;
 import android.support.annotation.Nullable;
 import android.support.annotation.StringRes;
 import android.support.v4.view.ViewPager;
@@ -10,6 +9,7 @@ import java.util.List;
 
 import ru.dmisb.photon.core.IBarView;
 
+@SuppressWarnings("unused")
 public class BarBuilder {
     private IBarView view;
 
@@ -27,8 +27,6 @@ public class BarBuilder {
     @Nullable
     private ViewPager pager;
     private int tabPageMode = DEFAULT_MODE;
-    @Nullable
-    private @DrawableRes Integer overFlowIcon;
 
     public BarBuilder(IBarView view) {
         this.view = view;
@@ -51,11 +49,6 @@ public class BarBuilder {
 
     public BarBuilder setToolbarVisible(boolean toolbarVisible) {
         this.toolbarVisible = toolbarVisible;
-        return this;
-    }
-
-    public BarBuilder setOverFlowIcon(@Nullable @DrawableRes Integer overFlowIcon) {
-        this.overFlowIcon = overFlowIcon;
         return this;
     }
 
@@ -86,9 +79,6 @@ public class BarBuilder {
                 view.setBarTitle(title);
 
             view.setBackArrow(showBack);
-
-            if (overFlowIcon != null)
-                view.setOverFlowIcon(overFlowIcon);
 
             view.setToolBarMenuItem(items);
 

@@ -5,7 +5,8 @@ import android.databinding.Bindable;
 
 import ru.dmisb.photon.data.storage.entities.AlbumRealm;
 
-public class NewCardAlbum extends BaseObservable {
+@SuppressWarnings("unused")
+public class NewCardAlbumViewModel extends BaseObservable {
     private String id;
     private String title;
     private String preview;
@@ -14,7 +15,7 @@ public class NewCardAlbum extends BaseObservable {
     private int views;
     private boolean isSelected;
 
-    NewCardAlbum(AlbumRealm album) {
+    NewCardAlbumViewModel(AlbumRealm album) {
         this.id = album.getId();
         this.title = album.getTitle();
         this.preview = album.getPreview();

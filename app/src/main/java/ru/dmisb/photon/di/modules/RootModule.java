@@ -8,6 +8,7 @@ import ru.dmisb.photon.screens.root.RootActivity;
 import ru.dmisb.photon.screens.root.RootModel;
 import ru.dmisb.photon.screens.root.RootPresenter;
 
+@SuppressWarnings("unused")
 @Module
 public class RootModule {
     @Provides

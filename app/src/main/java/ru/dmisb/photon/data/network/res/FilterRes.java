@@ -1,5 +1,6 @@
 package ru.dmisb.photon.data.network.res;
 
+@SuppressWarnings("unused")
 public class FilterRes {
     private String dish;
     private String nuances;

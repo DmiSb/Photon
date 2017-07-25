@@ -3,6 +3,7 @@ package ru.dmisb.photon.data.network.res;
 import java.util.Date;
 import java.util.List;
 
+@SuppressWarnings("unused")
 public class PhotoCardRes {
     private String id;
     private String owner;

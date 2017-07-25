@@ -8,13 +8,6 @@ import ru.dmisb.photon.flow.ScreenScoper;
 
 public class SearchModel extends BaseModel {
 
-    @Override
-    protected void initComponent() {
-        SearchScreen.Component component = ScreenScoper.getComponent(ScreenScoper.SEARCH_SCOPE_NAME);
-        if (component != null)
-            component.inject(this);
-    }
-
     Observable<String> getTagCollection() {
         Observable<String> networkObs = repository.getTagCollectionFromNetwork();
         Observable<String> realmObs = repository.getTagCollectionFromStorage();
@@ -47,4 +40,16 @@ public class SearchModel extends BaseModel {
     void setSearchFilter(String searchFilter) {
         repository.setSearchFilter(searchFilter);
     }
+
+    //region ================= BaseModel =================
+
+    @Override
+    protected void initComponent() {
+        SearchScreen.Component component = ScreenScoper.getComponent(ScreenScoper.SEARCH_SCOPE_NAME);
+        if (component != null)
+            component.inject(this);
+    }
+
+    //endregion
+
 }

@@ -9,10 +9,12 @@ import java.util.Collection;
 @SuppressWarnings("unused")
 public class L {
 
+    @SuppressWarnings("unused")
     private enum LogType {
         v, d, i, w, e
     }
 
+    @SuppressWarnings("unused")
     public interface LogReceiver {
         void log(@NonNull LogType type, @Nullable String tag, @Nullable String msg);
 
@@ -69,6 +71,7 @@ public class L {
     @NonNull
     private static LogReceiver logReceiver = DEFAULT_LOG_RECEIVER;
 
+    @SuppressWarnings("unused")
     private static class LogReceiverArray implements LogReceiver {
 
         @NonNull

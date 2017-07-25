@@ -11,17 +11,6 @@ public class ProfileModel extends BaseModel {
 
     private UserRealm user;
 
-    //region ================= BaseModel =================
-
-    @Override
-    protected void initComponent() {
-        ProfileScreen.Component component = ScreenScoper.getComponent(ScreenScoper.PROFILE_SCOPE_NAME);
-        if (component != null)
-            component.inject(this);
-    }
-
-    //endregion
-
     //region ================= ProfileModel =================
 
     boolean isSigned() {
@@ -56,6 +45,17 @@ public class ProfileModel extends BaseModel {
 
     void updateAlbum(AlbumRealm albumRealm, AlbumRes albumRes) {
         repository.updateAlbum(albumRealm, albumRes);
+    }
+
+    //endregion
+
+    //region ================= BaseModel =================
+
+    @Override
+    protected void initComponent() {
+        ProfileScreen.Component component = ScreenScoper.getComponent(ScreenScoper.PROFILE_SCOPE_NAME);
+        if (component != null)
+            component.inject(this);
     }
 
     //endregion

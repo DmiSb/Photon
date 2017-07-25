@@ -2,6 +2,7 @@ package ru.dmisb.photon.data.dto;
 
 import ru.dmisb.photon.screens.selector.filter.FilterViewModel;
 
+@SuppressWarnings("unused")
 public class FilterDto {
     private boolean meat;
     private boolean fish;

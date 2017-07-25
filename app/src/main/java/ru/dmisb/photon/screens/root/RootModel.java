@@ -6,6 +6,7 @@ import ru.dmisb.photon.data.repo.Repository;
 import ru.dmisb.photon.di.components.RootComponent;
 import ru.dmisb.photon.flow.ScreenScoper;
 
+@SuppressWarnings("unused")
 public class RootModel {
 
     @Inject

@@ -9,6 +9,7 @@ import dagger.Provides;
 import ru.dmisb.photon.data.local.PreferencesManager;
 import ru.dmisb.photon.data.storage.StorageManager;
 
+@SuppressWarnings("unused")
 @Module
 public class LocalModule {
     @Provides

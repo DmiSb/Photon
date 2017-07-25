@@ -4,8 +4,6 @@ import android.content.Context;
 import android.content.SharedPreferences;
 import android.preference.PreferenceManager;
 
-import ru.dmisb.photon.utils.L;
-
 public class PreferencesManager {
 
     private static final String USER_ID_KEY = "USER_ID";
@@ -58,7 +56,6 @@ public class PreferencesManager {
     }
 
     public void setSelfUserUpdated(String lastUserUpdated) {
-        L.d("setSelfUserUpdated = " + lastUserUpdated);
         setKeyValue(LAST_SELF_UPDATED_KEY, lastUserUpdated);
     }
 

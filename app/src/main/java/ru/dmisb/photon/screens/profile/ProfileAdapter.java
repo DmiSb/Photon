@@ -18,6 +18,7 @@ import ru.dmisb.photon.data.storage.entities.UserRealm;
 import ru.dmisb.photon.databinding.ScreenProfileAlbumBinding;
 import ru.dmisb.photon.flow.ScreenScoper;
 
+@SuppressWarnings("unused")
 public class ProfileAdapter extends RecyclerView.Adapter<ProfileAdapter.AlbumHolder> {
 
     private UserRealm user;
@@ -25,7 +26,7 @@ public class ProfileAdapter extends RecyclerView.Adapter<ProfileAdapter.AlbumHol
     @Inject
     ProfilePresenter presenter;
 
-    public ProfileAdapter() {
+    ProfileAdapter() {
         ProfileScreen.Component component = ScreenScoper.getComponent(ScreenScoper.PROFILE_SCOPE_NAME);
         if (component != null)
             component.inject(this);
@@ -90,11 +91,11 @@ public class ProfileAdapter extends RecyclerView.Adapter<ProfileAdapter.AlbumHol
         notifyDataSetChanged();
     }
 
-    public class AlbumHolder extends RecyclerView.ViewHolder {
+    class AlbumHolder extends RecyclerView.ViewHolder {
 
         ScreenProfileAlbumBinding binding;
 
-        public AlbumHolder(View itemView) {
+        AlbumHolder(View itemView) {
             super(itemView);
             binding = DataBindingUtil.bind(itemView);
         }

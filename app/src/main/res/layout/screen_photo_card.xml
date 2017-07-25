@@ -73,7 +73,8 @@
                         <LinearLayout
                             style="@style/CustomFullWidth"
                             android:orientation="vertical"
-                            android:layout_marginLeft="@dimen/size_16">
+                            android:layout_marginLeft="@dimen/size_16"
+                            tools:ignore="RtlHardcoded">
 
                             <TextView
                                 android:id="@+id/author_name"
@@ -113,7 +114,8 @@
                                 <LinearLayout
                                     style="@style/CustomFullHeight"
                                     android:layout_marginLeft="@dimen/size_16"
-                                    android:orientation="vertical">
+                                    android:orientation="vertical"
+                                    tools:ignore="RtlHardcoded">
 
                                     <TextView
                                         style="@style/CustomWrap"

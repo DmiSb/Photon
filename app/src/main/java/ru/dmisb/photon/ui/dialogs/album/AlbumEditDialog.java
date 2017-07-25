@@ -25,12 +25,13 @@ import ru.dmisb.photon.di.components.RootComponent;
 import ru.dmisb.photon.di.modules.RootModule;
 import ru.dmisb.photon.flow.ScreenScoper;
 
+@SuppressWarnings("unused")
 public class AlbumEditDialog extends AlertDialog {
 
     @Inject
     Repository repository;
 
-    protected AlbumEditDialog(@NonNull Context context) {
+    private AlbumEditDialog(@NonNull Context context) {
         super(context);
         initComponent();
     }

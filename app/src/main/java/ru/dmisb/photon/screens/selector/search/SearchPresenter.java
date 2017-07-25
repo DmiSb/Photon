@@ -31,8 +31,6 @@ public class SearchPresenter
                     );
     }
 
-
-
     @Override
     public void applySearch(String searchText) {
         model.setSearchFilter(searchText);
@@ -42,7 +40,6 @@ public class SearchPresenter
     }
 
     //endregion
-
 
     //region ================= BasePresenter =================
 

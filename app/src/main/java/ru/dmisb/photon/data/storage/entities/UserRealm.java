@@ -7,6 +7,7 @@ import io.realm.RealmObject;
 import io.realm.annotations.PrimaryKey;
 import ru.dmisb.photon.data.network.res.UserRes;
 
+@SuppressWarnings("unused")
 public class UserRealm extends RealmObject {
 
     @PrimaryKey

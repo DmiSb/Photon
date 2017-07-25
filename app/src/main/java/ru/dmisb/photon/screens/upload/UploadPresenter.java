@@ -12,7 +12,7 @@ public class UploadPresenter extends BasePresenter<UploadView, UploadModel> impl
 
     private String albumId;
 
-    public UploadPresenter(String albumId) {
+    UploadPresenter(String albumId) {
         this.albumId = albumId;
     }
 
@@ -44,7 +44,6 @@ public class UploadPresenter extends BasePresenter<UploadView, UploadModel> impl
     }
 
     //endregion
-
 
     //region ================= BasePresenter =================
 

@@ -10,7 +10,6 @@ import io.realm.RealmQuery;
 import io.realm.RealmResults;
 import ru.dmisb.photon.data.dto.AlbumDto;
 import ru.dmisb.photon.data.dto.FilterDto;
-import ru.dmisb.photon.data.network.req.AlbumReq;
 import ru.dmisb.photon.data.network.res.AlbumRes;
 import ru.dmisb.photon.data.network.res.PhotoCardRes;
 import ru.dmisb.photon.data.network.res.UserRes;
@@ -22,6 +21,7 @@ import ru.dmisb.photon.data.storage.entities.TagCollectionRealm;
 import ru.dmisb.photon.data.storage.entities.TagRealm;
 import ru.dmisb.photon.data.storage.entities.UserRealm;
 
+@SuppressWarnings("unused")
 public class StorageManager {
 
     private Realm realmInstance;

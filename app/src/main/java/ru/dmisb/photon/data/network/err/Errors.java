@@ -2,6 +2,7 @@ package ru.dmisb.photon.data.network.err;
 
 import ru.dmisb.photon.R;
 
+@SuppressWarnings("unused")
 public enum Errors {
     UNKNOWN_ERROR               ("unknown error",               R.string.err_unknown),
     NETWORK_NOT_AVAILABLE       ("network_not_available",       R.string.err_network_not_available),

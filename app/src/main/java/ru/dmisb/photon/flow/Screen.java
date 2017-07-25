@@ -7,6 +7,7 @@ import java.lang.annotation.Target;
 
 import javax.inject.Scope;
 
+@SuppressWarnings("unused")
 @Scope
 @Retention(RetentionPolicy.RUNTIME)
 @Target(ElementType.TYPE)

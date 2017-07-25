@@ -5,10 +5,14 @@ import ru.dmisb.photon.flow.ScreenScoper;
 
 public class SelectorModel extends BaseModel {
 
+    //region ================= BaseModel =================
+
     @Override
     protected void initComponent() {
         SelectorScreen.Component component = ScreenScoper.getComponent(ScreenScoper.SELECTOR_SCOPE_NAME);
         if (component != null)
             component.inject(this);
     }
+
+    //endregion
 }

@@ -5,6 +5,7 @@ import android.widget.Button;
 
 import ru.dmisb.photon.R;
 
+@SuppressWarnings("unused")
 public class FilterBindingAdpter {
 
     @BindingAdapter("caption")

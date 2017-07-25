@@ -21,6 +21,7 @@ import ru.dmisb.photon.flow.ScreenScoper;
 import ru.dmisb.photon.ui.helpers.PopupMenuHelper;
 import ru.dmisb.photon.utils.AppConfig;
 
+@SuppressWarnings("unused")
 public class MainView
         extends BaseView<MainPresenter, ScreenMainBinding> {
 
@@ -85,7 +86,7 @@ public class MainView
         }
     }
 
-    public void sendToSupport() {
+    private void sendToSupport() {
         Intent intent = new Intent(Intent.ACTION_SENDTO);
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP)
             intent.addFlags(Intent.FLAG_ACTIVITY_NEW_DOCUMENT);

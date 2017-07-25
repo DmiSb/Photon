@@ -57,7 +57,8 @@
                     android:layout_marginLeft="@dimen/size_24"
                     android:textSize="@dimen/font_16"
                     android:text="@{model.description}"
-                    tools:text="Разные закуски"/>
+                    tools:text="Разные закуски"
+                    tools:ignore="RtlHardcoded"/>
 
             </LinearLayout>
 

@@ -11,6 +11,7 @@ import android.widget.ImageView;
 import com.bumptech.glide.Glide;
 import com.bumptech.glide.request.target.BitmapImageViewTarget;
 
+@SuppressWarnings("unused")
 public class DataBindingAdapter {
 
     @BindingAdapter({"imageUrl", "placeholder"})

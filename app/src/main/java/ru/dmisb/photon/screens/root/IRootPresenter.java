@@ -8,6 +8,7 @@ import android.support.annotation.StringRes;
 import ru.dmisb.photon.ui.helpers.ActionHolder;
 import ru.dmisb.photon.ui.helpers.BarBuilder;
 
+@SuppressWarnings("unused")
 public interface IRootPresenter {
     void showMessage(String message);
     void showMessage(@StringRes int messageResId);

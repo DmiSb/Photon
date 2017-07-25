@@ -17,6 +17,7 @@ import ru.dmisb.photon.di.modules.RootModule;
 import ru.dmisb.photon.flow.ScreenScoper;
 import ru.dmisb.photon.utils.FormatUtils;
 
+@SuppressWarnings("unused")
 public class App extends Application {
 
     private static Context appContext;
@@ -72,11 +73,11 @@ public class App extends Application {
         RootComponent rootComponent = dataComponent.plus(new RootModule());
 
         appScope = MortarScope.buildRootScope()
-                .withService(ScreenScoper.SCOPE_SERVICE_NANE, appComponent)
+                .withService(ScreenScoper.SCOPE_SERVICE_NAME, appComponent)
                 .build(ScreenScoper.APP_SCOPE_NAME);
 
         MortarScope rootScope = appScope.buildChild()
-                .withService(ScreenScoper.SCOPE_SERVICE_NANE, rootComponent)
+                .withService(ScreenScoper.SCOPE_SERVICE_NAME, rootComponent)
                 .withService(BundleServiceRunner.SERVICE_NAME, new BundleServiceRunner())
                 .build(ScreenScoper.ROOT_SCOPE_NAME);
 
@@ -87,6 +88,7 @@ public class App extends Application {
         return dataComponent;
     }
 
+    @SuppressWarnings("unused")
     @dagger.Module
     public class AppModule {
 
@@ -102,6 +104,7 @@ public class App extends Application {
         }
     }
 
+    @SuppressWarnings("unused")
     @dagger.Component(modules = AppModule.class)
     public interface AppComponent {
         Context getContext();

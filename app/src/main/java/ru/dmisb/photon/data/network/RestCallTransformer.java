@@ -8,6 +8,7 @@ import ru.dmisb.photon.data.network.err.ErrorRes;
 import ru.dmisb.photon.data.network.err.Errors;
 
 public class RestCallTransformer<R> implements ObservableTransformer<Response<R>, R> {
+
     @Override
     public ObservableSource<R> apply(Observable<Response<R>> responseObservable) {
         return NetworkStatusChecker.isInternetAvailable()

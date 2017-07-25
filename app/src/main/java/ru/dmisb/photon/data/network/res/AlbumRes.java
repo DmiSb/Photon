@@ -2,6 +2,7 @@ package ru.dmisb.photon.data.network.res;
 
 import java.util.List;
 
+@SuppressWarnings("unused")
 public class AlbumRes {
     private String id;
     private String owner;

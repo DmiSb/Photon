@@ -11,6 +11,7 @@ import ru.dmisb.photon.core.IActivityResultView;
 import ru.dmisb.photon.databinding.ScreenUploadBinding;
 import ru.dmisb.photon.flow.ScreenScoper;
 
+@SuppressWarnings("unused")
 public class UploadView
         extends BaseView<UploadPresenter, ScreenUploadBinding> implements IActivityResultView {
 

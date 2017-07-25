@@ -67,5 +67,6 @@ public class PhotoCardPresenter
                     .setTitleResId(R.string.photo_card_title)
                     .build();
     }
+
     //endregion
 }

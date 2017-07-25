@@ -1,6 +1,5 @@
 package ru.dmisb.photon.ui.helpers;
 
-import android.content.Context;
 import android.support.annotation.MenuRes;
 import android.support.annotation.Nullable;
 import android.support.v7.view.menu.MenuPopupHelper;

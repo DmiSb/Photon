@@ -1,5 +1,6 @@
 package ru.dmisb.photon.data.network.req;
 
+@SuppressWarnings("unused")
 public class LoginReq {
     private String email;
     private String password;

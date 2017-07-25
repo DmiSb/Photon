@@ -1,5 +1,6 @@
 package ru.dmisb.photon.data.dto;
 
+@SuppressWarnings("unused")
 public class AlbumDto {
     private String id;
     private String title;

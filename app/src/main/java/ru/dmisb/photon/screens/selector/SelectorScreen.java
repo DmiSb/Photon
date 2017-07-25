@@ -34,6 +34,7 @@ public class SelectorScreen extends BaseScreen<RootComponent> {
 
     //region ================= DI =================
 
+    @SuppressWarnings("unused")
     @dagger.Module
     public class Module {
         @Provides

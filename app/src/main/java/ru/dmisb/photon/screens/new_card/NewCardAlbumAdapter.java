@@ -10,14 +10,11 @@ import java.util.ArrayList;
 import java.util.List;
 
 import ru.dmisb.photon.R;
-import ru.dmisb.photon.data.storage.entities.AlbumRealm;
-import ru.dmisb.photon.data.storage.entities.UserRealm;
 import ru.dmisb.photon.databinding.ScreenNewCardAlbumBinding;
-import ru.dmisb.photon.databinding.ScreenProfileAlbumBinding;
 
 class NewCardAlbumAdapter extends RecyclerView.Adapter<NewCardAlbumAdapter.AlbumHolder> {
 
-    private List<NewCardAlbum> albumList = new ArrayList<>();
+    private List<NewCardAlbumViewModel> albumList = new ArrayList<>();
 
     @Override
     public AlbumHolder onCreateViewHolder(ViewGroup parent, int viewType) {
@@ -36,7 +33,7 @@ class NewCardAlbumAdapter extends RecyclerView.Adapter<NewCardAlbumAdapter.Album
     public void onBindViewHolder(AlbumHolder holder, int position) {
         holder.binding.setModel(albumList.get(position));
         holder.binding.albumPhoto.setOnClickListener(v -> {
-            for (NewCardAlbum album : albumList) {
+            for (NewCardAlbumViewModel album : albumList) {
                 album.setSelected(false);
             }
 
@@ -50,8 +47,8 @@ class NewCardAlbumAdapter extends RecyclerView.Adapter<NewCardAlbumAdapter.Album
         return albumList.size();
     }
 
-    void addAlbum(NewCardAlbum album) {
-        albumList.add(album);
+    void addAlbum(NewCardAlbumViewModel viewModel) {
+        albumList.add(viewModel);
         notifyDataSetChanged();
     }
 

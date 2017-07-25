@@ -10,6 +10,7 @@ import android.widget.FrameLayout;
 
 import javax.inject.Inject;
 
+@SuppressWarnings("unused")
 public abstract class BaseView<P extends BasePresenter, B extends ViewDataBinding>
         extends FrameLayout implements IBaseView {
 

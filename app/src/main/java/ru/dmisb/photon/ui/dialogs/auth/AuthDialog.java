@@ -21,12 +21,13 @@ import ru.dmisb.photon.di.components.RootComponent;
 import ru.dmisb.photon.di.modules.RootModule;
 import ru.dmisb.photon.flow.ScreenScoper;
 
+@SuppressWarnings("unused")
 public class AuthDialog extends AlertDialog {
 
     @Inject
     Repository repository;
 
-    public AuthDialog(@NonNull Context context) {
+    private AuthDialog(@NonNull Context context) {
         super(context);
         initComponent();
     }

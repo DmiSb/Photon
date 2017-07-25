@@ -6,11 +6,9 @@ import android.databinding.DataBindingUtil;
 import android.graphics.PorterDuff;
 import android.graphics.drawable.Drawable;
 import android.net.Uri;
-import android.os.PersistableBundle;
-import android.support.annotation.DrawableRes;
-import android.support.annotation.MenuRes;
-import android.support.annotation.NonNull;
 import android.os.Bundle;
+import android.os.PersistableBundle;
+import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.support.annotation.StringRes;
 import android.support.design.widget.Snackbar;
@@ -19,14 +17,10 @@ import android.support.v4.content.ContextCompat;
 import android.support.v4.content.res.ResourcesCompat;
 import android.support.v4.view.ViewPager;
 import android.support.v7.app.ActionBar;
-import android.support.v7.view.menu.MenuPopupHelper;
-import android.support.v7.widget.PopupMenu;
 import android.view.Menu;
-import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
 
-import java.lang.reflect.Field;
 import java.util.List;
 
 import javax.inject.Inject;
@@ -54,6 +48,7 @@ import ru.dmisb.photon.ui.helpers.ActionHolder;
 import ru.dmisb.photon.ui.helpers.BottomNavigationHelper;
 import ru.dmisb.photon.ui.helpers.MenuItemHolder;
 
+@SuppressWarnings("unused")
 public class RootActivity
         extends BaseActivity<ActivityRootBinding>
         implements IRootView {
@@ -255,18 +250,6 @@ public class RootActivity
                 actionBar.setDisplayHomeAsUpEnabled(false);
                 actionBar.setHomeButtonEnabled(false);
             }
-        }
-    }
-
-    @Override
-    public void setOverFlowIcon(@DrawableRes Integer iconRes) {
-        if (iconRes != null) {
-            Drawable icon = ResourcesCompat.getDrawable(getResources(), iconRes, null);
-            if (icon != null) {
-                icon.setColorFilter(ResourcesCompat.getColor(getResources(), R.color.black, null),
-                        PorterDuff.Mode.SRC_ATOP);
-            }
-            viewDataBinding.toolbar.setOverflowIcon(icon);
         }
     }
 

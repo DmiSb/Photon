@@ -1,5 +1,6 @@
 package ru.dmisb.photon.data.network.req;
 
+@SuppressWarnings("unused")
 public class RegisterReq {
     private String name;
     private String login;

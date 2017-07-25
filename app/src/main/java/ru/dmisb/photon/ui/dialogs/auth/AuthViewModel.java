@@ -10,6 +10,7 @@ import ru.dmisb.photon.utils.Constants;
 
 import static android.util.Patterns.EMAIL_ADDRESS;
 
+@SuppressWarnings("unused")
 public class AuthViewModel extends BaseObservable {
     private String email;
     private String password;

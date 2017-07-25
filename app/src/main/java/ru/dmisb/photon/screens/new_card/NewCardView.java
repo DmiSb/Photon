@@ -13,6 +13,7 @@ import ru.dmisb.photon.databinding.ScreenNewCardBinding;
 import ru.dmisb.photon.flow.ScreenScoper;
 import ru.dmisb.photon.screens.selector.filter.FilterViewModel;
 
+@SuppressWarnings("unused")
 public class NewCardView extends BaseView<NewCardPresenter, ScreenNewCardBinding> {
 
     private final NewCardTagAdapter tagAdapter = new NewCardTagAdapter();
@@ -28,7 +29,7 @@ public class NewCardView extends BaseView<NewCardPresenter, ScreenNewCardBinding
         tagAdapter.addTags(viewModel.getTags());
     }
 
-    void addAlbim(NewCardAlbum album) {
+    void addAlbim(NewCardAlbumViewModel album) {
         albumAdapter.addAlbum(album);
     }
 

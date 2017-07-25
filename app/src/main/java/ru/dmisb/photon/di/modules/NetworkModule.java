@@ -18,6 +18,7 @@ import ru.dmisb.photon.data.network.RestService;
 import ru.dmisb.photon.data.network.adapters.DateAdapter;
 import ru.dmisb.photon.utils.AppConfig;
 
+@SuppressWarnings("unused")
 @Module
 public class NetworkModule {
 

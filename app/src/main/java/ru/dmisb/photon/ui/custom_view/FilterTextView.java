@@ -9,6 +9,7 @@ import android.util.AttributeSet;
 
 import ru.dmisb.photon.R;
 
+@SuppressWarnings("unused")
 public class FilterTextView extends android.support.v7.widget.AppCompatTextView {
 
     private boolean filtered;
@@ -40,12 +41,10 @@ public class FilterTextView extends android.support.v7.widget.AppCompatTextView 
             listener.onFilteredChange(this, filtered);
     }
 
-    @SuppressWarnings("unused")
     public boolean isShade() {
         return shade;
     }
 
-    @SuppressWarnings("unused")
     public void setShade(boolean shade) {
         this.shade = shade;
     }

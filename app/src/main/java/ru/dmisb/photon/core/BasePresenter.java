@@ -10,6 +10,7 @@ import mortar.MortarScope;
 import mortar.ViewPresenter;
 import ru.dmisb.photon.screens.root.IRootPresenter;
 
+@SuppressWarnings("unused")
 public abstract class BasePresenter<V extends BaseView, M extends BaseModel>
         extends ViewPresenter<V> {
 

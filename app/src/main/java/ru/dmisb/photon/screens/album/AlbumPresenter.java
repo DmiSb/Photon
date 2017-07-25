@@ -1,5 +1,6 @@
 package ru.dmisb.photon.screens.album;
 
+import android.annotation.SuppressLint;
 import android.view.MenuItem;
 
 import ru.dmisb.photon.R;
@@ -7,7 +8,7 @@ import ru.dmisb.photon.core.BasePresenter;
 import ru.dmisb.photon.data.dto.AlbumDto;
 import ru.dmisb.photon.data.storage.entities.AlbumRealm;
 import ru.dmisb.photon.flow.ScreenScoper;
-import ru.dmisb.photon.ui.dialogs.album.*;
+import ru.dmisb.photon.ui.dialogs.album.AlbumEditDialog;
 import ru.dmisb.photon.ui.helpers.MenuItemHolder;
 
 public class AlbumPresenter
@@ -18,7 +19,7 @@ public class AlbumPresenter
     private int position;
     private AlbumViewModel viewModel = new AlbumViewModel();
 
-    public AlbumPresenter(String albumId, int position) {
+    AlbumPresenter(String albumId, int position) {
         this.albumId = albumId;
         this.position = position;
     }
@@ -75,6 +76,7 @@ public class AlbumPresenter
         }
     }
 
+    @SuppressLint("AlwaysShowAction")
     @Override
     protected void initActionBar() {
         rootPresenter.newBarBuilder()

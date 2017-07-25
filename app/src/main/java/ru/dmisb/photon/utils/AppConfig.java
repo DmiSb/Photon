@@ -2,6 +2,7 @@ package ru.dmisb.photon.utils;
 
 import ru.dmisb.photon.BuildConfig;
 
+@SuppressWarnings("unused")
 public final class AppConfig {
     private static final boolean DEBUG = BuildConfig.DEBUG;
 

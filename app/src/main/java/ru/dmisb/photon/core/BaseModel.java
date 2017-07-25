@@ -4,12 +4,13 @@ import javax.inject.Inject;
 
 import ru.dmisb.photon.data.repo.Repository;
 
+@SuppressWarnings("unused")
 public abstract class BaseModel {
 
     @Inject
     protected Repository repository;
 
-    public BaseModel() {
+    protected BaseModel() {
         initComponent();
     }
 

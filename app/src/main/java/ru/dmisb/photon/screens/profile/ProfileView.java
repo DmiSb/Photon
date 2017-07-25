@@ -16,11 +16,30 @@ import ru.dmisb.photon.data.storage.entities.UserRealm;
 import ru.dmisb.photon.databinding.ScreenProfileBinding;
 import ru.dmisb.photon.flow.ScreenScoper;
 import ru.dmisb.photon.ui.helpers.PopupMenuHelper;
-import ru.dmisb.photon.utils.L;
 
+@SuppressWarnings("unused")
 public class ProfileView extends BaseView<ProfilePresenter, ScreenProfileBinding> {
 
     private ProfileAdapter adapter = new ProfileAdapter();
+
+    //region ================= ProfileView =================
+
+    void setViewModel(ProfileViewModel viewModel) {
+        viewDataBinding.setModel(viewModel);
+    }
+
+    void setUserModel(UserRealm user) {
+        viewDataBinding.setUser(user);
+        adapter.setUser(user);
+    }
+
+    void setListPosition(int idx) {
+        viewDataBinding.profileAlbumList.scrollToPosition(idx);
+    }
+
+    void updateView() {
+        adapter.notifyDataSetChanged();
+    }
 
     public ProfileView(@NonNull Context context, @Nullable AttributeSet attrs) {
         super(context, attrs);
@@ -57,6 +76,8 @@ public class ProfileView extends BaseView<ProfilePresenter, ScreenProfileBinding
             popup.show();
         }
     }
+
+    //endregion
 
     //region ================= BaseView =================
 
@@ -97,25 +118,5 @@ public class ProfileView extends BaseView<ProfilePresenter, ScreenProfileBinding
         viewDataBinding.profileAuthLayout.profileRegister.setOnClickListener(null);
     }
 
-    //endregion
-
-    //region ================= ProfileView =================
-
-    void setViewModel(ProfileViewModel viewModel) {
-        viewDataBinding.setModel(viewModel);
-    }
-
-    void setUserModel(UserRealm user) {
-        viewDataBinding.setUser(user);
-        adapter.setUser(user);
-    }
-
-    void setListPosition(int idx) {
-        viewDataBinding.profileAlbumList.scrollToPosition(idx);
-    }
-
-    void updateView() {
-        adapter.notifyDataSetChanged();
-    }
     //endregion
 }

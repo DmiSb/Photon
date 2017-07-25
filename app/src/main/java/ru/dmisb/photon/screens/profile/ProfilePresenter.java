@@ -1,5 +1,6 @@
 package ru.dmisb.photon.screens.profile;
 
+import android.annotation.SuppressLint;
 import android.view.MenuItem;
 
 import ru.dmisb.photon.R;
@@ -26,70 +27,6 @@ public class ProfilePresenter
         this.position = position;
     }
 
-    //region ================= BasePresenter =================
-
-    @Override
-    protected void initComponent() {
-        ProfileScreen.Component component = ScreenScoper.getComponent(ScreenScoper.PROFILE_SCOPE_NAME);
-        if (component != null)
-            component.inject(this);
-    }
-
-    @Override
-    protected void initView() {
-        boolean userSigned = model.isSigned();
-        viewModel.setSigned(userSigned);
-        if (getView() != null) {
-            getView().setViewModel(viewModel);
-
-            if (userSigned)
-                model.getUser().subscribe(
-                        userRealm -> getView().setUserModel(userRealm),
-                        throwable -> rootPresenter.showError(throwable)
-                );
-
-            getView().setListPosition(position);
-        }
-    }
-
-    @Override
-    protected void initActionBar() {
-        if (rootPresenter != null) {
-            BarBuilder barBuilder = rootPresenter.newBarBuilder()
-                    .setToolbarVisible(true)
-                    .setBottomBarVisible(true)
-                    .setTitleResId(R.string.profile_action);
-
-            boolean isUserSigned = viewModel.isSigned();
-
-            if (isUserSigned)
-                barBuilder.addAction(new MenuItemHolder(R.string.profile_add_album,
-                        R.drawable.ic_add, null, false, MenuItem.SHOW_AS_ACTION_ALWAYS,
-                        item -> {
-                            onAlbumAddClick();
-                            return false;
-                        }
-                ));
-
-            barBuilder
-                    .addAction(new MenuItemHolder(R.string.menu, R.drawable.ic_menu,
-                        R.color.black, false, MenuItem.SHOW_AS_ACTION_ALWAYS,
-                            item -> {
-                                if (getView() != null) {
-                                    if (isUserSigned)
-                                        getView().showSignedPopupMenu(item);
-                                    else
-                                        getView().showUnsignedPopupMenu(item);
-                                }
-                                return false;
-                            }
-                    ))
-                    .build();
-        }
-    }
-
-    //endregion
-
     //region ================= IProfilePresenter =================
 
     @Override
@@ -104,7 +41,7 @@ public class ProfilePresenter
                                     initActionBar();
                                 }
                             }
-            );
+                    );
     }
 
     @Override
@@ -127,11 +64,11 @@ public class ProfilePresenter
     public void onAlbumAddClick() {
         if (getView() != null)
             AlbumAddDialog.showDialog(getView().getContext(), null)
-                .subscribe(
-                        albumRes -> model.addAlbum(albumRes),
-                        throwable -> rootPresenter.showError(throwable),
-                        () -> getView().updateView()
-                );
+                    .subscribe(
+                            albumRes -> model.addAlbum(albumRes),
+                            throwable -> rootPresenter.showError(throwable),
+                            () -> getView().updateView()
+                    );
     }
 
     @Override
@@ -168,6 +105,71 @@ public class ProfilePresenter
                     if (getView() != null)
                         getView().updateView();
                 });
+    }
+
+    //endregion
+
+    //region ================= BasePresenter =================
+
+    @Override
+    protected void initComponent() {
+        ProfileScreen.Component component = ScreenScoper.getComponent(ScreenScoper.PROFILE_SCOPE_NAME);
+        if (component != null)
+            component.inject(this);
+    }
+
+    @Override
+    protected void initView() {
+        boolean userSigned = model.isSigned();
+        viewModel.setSigned(userSigned);
+        if (getView() != null) {
+            getView().setViewModel(viewModel);
+
+            if (userSigned)
+                model.getUser().subscribe(
+                        userRealm -> getView().setUserModel(userRealm),
+                        throwable -> rootPresenter.showError(throwable)
+                );
+
+            getView().setListPosition(position);
+        }
+    }
+
+    @SuppressLint("AlwaysShowAction")
+    @Override
+    protected void initActionBar() {
+        if (rootPresenter != null) {
+            BarBuilder barBuilder = rootPresenter.newBarBuilder()
+                    .setToolbarVisible(true)
+                    .setBottomBarVisible(true)
+                    .setTitleResId(R.string.profile_action);
+
+            boolean isUserSigned = viewModel.isSigned();
+
+            if (isUserSigned)
+                barBuilder.addAction(new MenuItemHolder(R.string.profile_add_album,
+                        R.drawable.ic_add, null, false, MenuItem.SHOW_AS_ACTION_ALWAYS,
+                        item -> {
+                            onAlbumAddClick();
+                            return false;
+                        }
+                ));
+
+            barBuilder
+                    .addAction(new MenuItemHolder(R.string.menu, R.drawable.ic_menu,
+                        R.color.black, false, MenuItem.SHOW_AS_ACTION_ALWAYS,
+                            item -> {
+                                if (getView() != null) {
+                                    if (isUserSigned)
+                                        getView().showSignedPopupMenu(item);
+                                    else
+                                        getView().showUnsignedPopupMenu(item);
+                                }
+                                return false;
+                            }
+                    ))
+                    .build();
+        }
     }
 
     //endregion

@@ -7,6 +7,7 @@ import android.widget.RelativeLayout;
 
 import ru.dmisb.photon.R;
 
+@SuppressWarnings("unused")
 public class AuthBindingAdapter {
 
     @BindingAdapter("canSign")

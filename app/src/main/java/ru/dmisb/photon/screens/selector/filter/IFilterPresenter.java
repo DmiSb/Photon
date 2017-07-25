@@ -1,5 +1,6 @@
 package ru.dmisb.photon.screens.selector.filter;
 
-public interface IFilterPresenter {
+@SuppressWarnings("unused")
+interface IFilterPresenter {
     void filterActionClick();
 }

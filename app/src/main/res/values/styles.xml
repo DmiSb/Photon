@@ -99,12 +99,6 @@
     </style>
 
     <!-- screen_main_item -->
-    <style name="MainItemIcon">
-        <item name="android:layout_width">@dimen/size_24</item>
-        <item name="android:layout_height">@dimen/size_24</item>
-        <item name="android:tint">@color/colorPrimary</item>
-    </style>
-
     <style name="MainItemText">
         <item name="android:layout_width">0dp</item>
         <item name="android:layout_height">match_parent</item>

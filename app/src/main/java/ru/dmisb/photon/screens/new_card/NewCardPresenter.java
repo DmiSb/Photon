@@ -8,6 +8,7 @@ import ru.dmisb.photon.data.storage.entities.AlbumRealm;
 import ru.dmisb.photon.flow.ScreenScoper;
 import ru.dmisb.photon.screens.selector.filter.FilterViewModel;
 
+@SuppressWarnings("unused")
 public class NewCardPresenter
         extends BasePresenter<NewCardView, NewCardModel> implements INewCardPresenter {
 
@@ -80,7 +81,7 @@ public class NewCardPresenter
                                     viewModel.setAlbumCount(albumCount);
                                     for (AlbumRealm album : userRealm.getAlbums()) {
                                         if (album.isActive())
-                                            getView().addAlbim( new NewCardAlbum(album) );
+                                            getView().addAlbim( new NewCardAlbumViewModel(album) );
                                     }
                                 }
                             },

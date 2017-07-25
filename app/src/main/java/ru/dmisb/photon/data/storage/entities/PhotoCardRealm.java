@@ -5,6 +5,7 @@ import io.realm.RealmObject;
 import io.realm.annotations.PrimaryKey;
 import ru.dmisb.photon.data.network.res.PhotoCardRes;
 
+@SuppressWarnings("unused")
 public class PhotoCardRealm extends RealmObject {
 
     @PrimaryKey

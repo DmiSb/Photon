@@ -36,14 +36,16 @@
                 style="@style/MainItemText"
                 android:drawableLeft="@drawable/ic_favorites"
                 android:text="@{model.favoritsStr}"
-                tools:text="56"/>
+                tools:text="56"
+                tools:ignore="RtlHardcoded"/>
 
             <TextView
                 android:id="@+id/main_views"
                 style="@style/MainItemText"
                 android:drawableLeft="@drawable/ic_views"
                 android:text="@{model.viewsStr}"
-                tools:text="5"/>
+                tools:text="5"
+                tools:ignore="RtlHardcoded"/>
 
         </LinearLayout>
 

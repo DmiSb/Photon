@@ -25,13 +25,14 @@ import ru.dmisb.photon.data.network.req.LoginReq;
 import ru.dmisb.photon.data.network.req.RegisterReq;
 import ru.dmisb.photon.data.network.res.AlbumRes;
 import ru.dmisb.photon.data.network.res.ImageRes;
+import ru.dmisb.photon.data.storage.StorageManager;
 import ru.dmisb.photon.data.storage.entities.AlbumRealm;
 import ru.dmisb.photon.data.storage.entities.PhotoCardRealm;
-import ru.dmisb.photon.data.storage.StorageManager;
 import ru.dmisb.photon.data.storage.entities.UserRealm;
 import ru.dmisb.photon.di.components.DataComponent;
 import ru.dmisb.photon.utils.Constants;
 
+@SuppressWarnings("unused")
 public class Repository {
 
     //region ================= Fields =================
@@ -55,12 +56,12 @@ public class Repository {
 
     //region ================= User from PreferencesManager =================
 
-    public String getTocken() {
+    private String getToken() {
         return preferencesManager.getToken();
     }
 
     public boolean isSigned() {
-        return !getTocken().isEmpty();
+        return !getToken().isEmpty();
     }
 
     public String getSelfUserId() {
@@ -151,7 +152,7 @@ public class Repository {
 
     public Observable<AlbumRes> addAlbumToApi(AlbumReq album) {
         album.setOwner(getSelfUserId());
-        return restService.addAlbum(getSelfUserId(), getTocken(), album)
+        return restService.addAlbum(getSelfUserId(), getToken(), album)
                 .subscribeOn(Schedulers.io())
                 .compose(new RestCallTransformer<>())
                 .observeOn(AndroidSchedulers.mainThread());
@@ -159,14 +160,14 @@ public class Repository {
 
     public Observable<AlbumRes> updateAlbumFromApi(String albumId, AlbumReq album) {
         album.setOwner(getSelfUserId());
-        return restService.editAlbum(getSelfUserId(), albumId, getTocken(), album)
+        return restService.editAlbum(getSelfUserId(), albumId, getToken(), album)
                 .subscribeOn(Schedulers.io())
                 .compose(new RestCallTransformer<>())
                 .observeOn(AndroidSchedulers.mainThread());
     }
 
     public Observable deleteAlbumFromApi(UserRealm user, String albumId){
-        return restService.deleteAlbum(getSelfUserId(), albumId, getTocken())
+        return restService.deleteAlbum(getSelfUserId(), albumId, getToken())
                 .subscribeOn(Schedulers.io())
                 .compose(new RestCallTransformer<>())
                 .observeOn(AndroidSchedulers.mainThread())
@@ -222,7 +223,7 @@ public class Repository {
         MultipartBody.Part body =
                 MultipartBody.Part.createFormData("image", imageFile.getName(), requestBody);
 
-        return restService.uploadImage(getSelfUserId(), getTocken(), body)
+        return restService.uploadImage(getSelfUserId(), getToken(), body)
                 .compose(new RestCallTransformer<>())
                 .subscribeOn(Schedulers.io())
                 .observeOn(AndroidSchedulers.mainThread());

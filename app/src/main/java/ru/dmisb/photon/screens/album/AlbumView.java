@@ -6,7 +6,6 @@ import android.support.annotation.Nullable;
 import android.support.v7.widget.PopupMenu;
 import android.util.AttributeSet;
 import android.view.MenuItem;
-import android.view.View;
 
 import ru.dmisb.photon.R;
 import ru.dmisb.photon.core.BaseView;
@@ -14,6 +13,7 @@ import ru.dmisb.photon.databinding.ScreenAlbumBinding;
 import ru.dmisb.photon.flow.ScreenScoper;
 import ru.dmisb.photon.ui.helpers.PopupMenuHelper;
 
+@SuppressWarnings("unused")
 public class AlbumView extends BaseView<AlbumPresenter, ScreenAlbumBinding> {
 
     public AlbumView(@NonNull Context context, @Nullable AttributeSet attrs) {

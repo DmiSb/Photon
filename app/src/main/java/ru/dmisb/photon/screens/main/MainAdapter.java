@@ -16,9 +16,10 @@ import ru.dmisb.photon.data.storage.entities.PhotoCardRealm;
 import ru.dmisb.photon.databinding.ScreenMainItemBinding;
 import ru.dmisb.photon.flow.ScreenScoper;
 
+@SuppressWarnings("unused")
 public class MainAdapter extends RecyclerView.Adapter<MainAdapter.MainViewHolder> {
 
-    List<PhotoCardRealm> photoCardList = new ArrayList<>();
+    private List<PhotoCardRealm> photoCardList = new ArrayList<>();
 
     @Inject
     MainPresenter presenter;

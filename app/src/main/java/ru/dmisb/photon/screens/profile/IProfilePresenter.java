@@ -2,7 +2,8 @@ package ru.dmisb.photon.screens.profile;
 
 import ru.dmisb.photon.data.storage.entities.AlbumRealm;
 
-public interface IProfilePresenter {
+@SuppressWarnings("unused")
+interface IProfilePresenter {
     void onAuthClick();
     void onRegisterClick();
     void onAlbumAddClick();

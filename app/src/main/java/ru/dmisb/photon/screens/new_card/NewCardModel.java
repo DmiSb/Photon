@@ -23,8 +23,6 @@ public class NewCardModel extends BaseModel {
         }
     }
 
-    
-
     //region ================= BaseModel =================
 
     @Override

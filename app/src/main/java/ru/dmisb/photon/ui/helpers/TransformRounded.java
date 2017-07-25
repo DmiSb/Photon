@@ -11,6 +11,7 @@ import android.support.v4.graphics.ColorUtils;
 import com.bumptech.glide.load.engine.bitmap_recycle.BitmapPool;
 import com.bumptech.glide.load.resource.bitmap.BitmapTransformation;
 
+@SuppressWarnings("unused")
 public class TransformRounded extends BitmapTransformation {
 
     public TransformRounded(Context context) {

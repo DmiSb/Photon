@@ -2,6 +2,7 @@ package ru.dmisb.photon.ui.dialogs.register;
 
 import android.databinding.Bindable;
 import android.text.TextUtils;
+
 import java.util.regex.Pattern;
 
 import ru.dmisb.photon.core.BaseViewModel;
@@ -10,6 +11,7 @@ import ru.dmisb.photon.utils.Constants;
 import static android.util.Patterns.EMAIL_ADDRESS;
 
 
+@SuppressWarnings("unused")
 public class RegisterViewModel extends BaseViewModel {
     private String login;
     private String email;

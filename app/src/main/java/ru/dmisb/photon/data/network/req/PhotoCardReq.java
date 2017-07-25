@@ -4,8 +4,8 @@ import java.util.List;
 
 import ru.dmisb.photon.data.dto.FilterDto;
 
+@SuppressWarnings("unused")
 public class PhotoCardReq {
-
     private String album;
     private String title;
     private String photo;

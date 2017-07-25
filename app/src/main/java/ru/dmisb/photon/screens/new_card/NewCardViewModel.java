@@ -8,6 +8,7 @@ import java.util.List;
 
 import ru.dmisb.photon.BR;
 
+@SuppressWarnings("unused")
 public class NewCardViewModel extends BaseObservable {
     private String title;
     private String tag;

@@ -8,6 +8,7 @@ import io.realm.annotations.PrimaryKey;
 import ru.dmisb.photon.data.network.res.AlbumRes;
 import ru.dmisb.photon.data.network.res.PhotoCardRes;
 
+@SuppressWarnings("unused")
 public class AlbumRealm extends RealmObject {
     @PrimaryKey
     private String id;

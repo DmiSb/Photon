@@ -19,16 +19,15 @@ import retrofit2.http.Path;
 import retrofit2.http.Query;
 import ru.dmisb.photon.data.network.req.AlbumReq;
 import ru.dmisb.photon.data.network.req.LoginReq;
-import ru.dmisb.photon.data.network.req.PhotoCardReq;
 import ru.dmisb.photon.data.network.req.RegisterReq;
 import ru.dmisb.photon.data.network.res.AlbumRes;
-import ru.dmisb.photon.data.network.res.CreateRes;
 import ru.dmisb.photon.data.network.res.DeleteRes;
 import ru.dmisb.photon.data.network.res.ImageRes;
 import ru.dmisb.photon.data.network.res.PhotoCardRes;
 import ru.dmisb.photon.data.network.res.UserRes;
 import ru.dmisb.photon.utils.Constants;
 
+@SuppressWarnings("unused")
 public interface RestService {
 
     //region ================= PhotoCards =================

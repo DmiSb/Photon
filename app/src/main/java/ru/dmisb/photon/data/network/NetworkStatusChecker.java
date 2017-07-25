@@ -7,8 +7,9 @@ import android.net.NetworkInfo;
 import io.reactivex.Observable;
 import ru.dmisb.photon.App;
 
-public class NetworkStatusChecker {
-    public static boolean isNetworkAvailable() {
+class NetworkStatusChecker {
+
+    private static boolean isNetworkAvailable() {
         ConnectivityManager cm = (ConnectivityManager) App.getAppContext().getSystemService(Context.CONNECTIVITY_SERVICE);
         NetworkInfo activeNetwork = cm.getActiveNetworkInfo();
         return activeNetwork != null && activeNetwork.isConnectedOrConnecting();

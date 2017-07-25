@@ -64,7 +64,8 @@
                     android:gravity="center_vertical"
                     android:textSize="@dimen/font_20"
                     android:textColor="@color/black"
-                    android:text="@string/search_tags"/>
+                    android:text="@string/search_tags"
+                    tools:ignore="RtlHardcoded,RtlSymmetry"/>
 
                 <com.google.android.flexbox.FlexboxLayout
                     android:id="@+id/search_tags"

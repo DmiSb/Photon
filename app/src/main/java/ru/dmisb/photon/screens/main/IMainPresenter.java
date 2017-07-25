@@ -1,6 +1,7 @@
 package ru.dmisb.photon.screens.main;
 
-public interface IMainPresenter {
+@SuppressWarnings("unused")
+interface IMainPresenter {
     void onPhotoCardClick(String photoCardId);
     void onAuthClick();
     void onExitClick();

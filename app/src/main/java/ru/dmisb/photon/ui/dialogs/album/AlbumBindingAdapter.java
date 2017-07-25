@@ -7,6 +7,7 @@ import android.widget.RelativeLayout;
 
 import ru.dmisb.photon.R;
 
+@SuppressWarnings("unused")
 public class AlbumBindingAdapter {
     @BindingAdapter("validName")
     public static void getValidName(RelativeLayout layout, AlbumViewModel model) {

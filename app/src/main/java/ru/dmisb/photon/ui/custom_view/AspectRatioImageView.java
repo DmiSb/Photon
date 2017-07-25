@@ -7,6 +7,7 @@ import android.util.AttributeSet;
 
 import ru.dmisb.photon.R;
 
+@SuppressWarnings("unused")
 public class AspectRatioImageView extends AppCompatImageView {
 
     private static final float DEFAULT_ASPECT_RATIO = 1.27f;

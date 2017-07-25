@@ -9,6 +9,7 @@ import ru.dmisb.photon.core.BaseView;
 import ru.dmisb.photon.databinding.ScreenFilterBinding;
 import ru.dmisb.photon.flow.ScreenScoper;
 
+@SuppressWarnings("unused")
 public class FilterView extends BaseView<FilterPresenter, ScreenFilterBinding> {
 
     public FilterView(@NonNull Context context, @Nullable AttributeSet attrs) {

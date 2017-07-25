@@ -3,12 +3,9 @@ package ru.dmisb.photon.screens.root;
 import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.net.Uri;
-import android.support.annotation.MenuRes;
 import android.support.annotation.NonNull;
 import android.support.annotation.StringRes;
 import android.support.v4.content.ContextCompat;
-import android.view.MenuItem;
-import android.view.View;
 
 import javax.inject.Inject;
 
@@ -21,6 +18,7 @@ import ru.dmisb.photon.flow.ScreenScoper;
 import ru.dmisb.photon.ui.helpers.ActionHolder;
 import ru.dmisb.photon.ui.helpers.BarBuilder;
 
+@SuppressWarnings("unused")
 public class RootPresenter extends Presenter<IRootView> implements IRootPresenter {
 
     @Inject

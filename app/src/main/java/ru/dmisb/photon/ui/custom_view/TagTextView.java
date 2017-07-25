@@ -1,5 +1,6 @@
 package ru.dmisb.photon.ui.custom_view;
 
+import android.annotation.SuppressLint;
 import android.content.Context;
 import android.content.res.TypedArray;
 import android.support.annotation.DrawableRes;
@@ -10,6 +11,7 @@ import android.util.AttributeSet;
 
 import ru.dmisb.photon.R;
 
+@SuppressWarnings("unused")
 public class TagTextView extends android.support.v7.widget.AppCompatTextView {
 
     private static final @StyleRes int defaultStyle = R.style.PhotoCardTag;
@@ -55,6 +57,7 @@ public class TagTextView extends android.support.v7.widget.AppCompatTextView {
         return tagText;
     }
 
+    @SuppressLint("SetTextI18n")
     public void setTagText(String tagText) {
         this.tagText = tagText;
         setText("#" + tagText);

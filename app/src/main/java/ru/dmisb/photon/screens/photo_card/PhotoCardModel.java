@@ -8,17 +8,6 @@ import ru.dmisb.photon.flow.ScreenScoper;
 
 public class PhotoCardModel extends BaseModel {
 
-    //region ================= BaseModel =================
-
-    @Override
-    protected void initComponent() {
-        PhotoCardScreen.Component component = ScreenScoper.getComponent(ScreenScoper.PHOTO_CARD_SCOPE_NAME);
-        if (component != null)
-            component.inject(this);
-    }
-
-    //endregion
-
     PhotoCardRealm getPhotoCard(String photoCardId) {
         return repository.getPhotoCardFromStorage(photoCardId);
     }
@@ -36,4 +25,15 @@ public class PhotoCardModel extends BaseModel {
     Observable<UserRealm> getUserFromStorage(String userId) {
         return repository.getUserFromStorage(userId);
     }
+
+    //region ================= BaseModel =================
+
+    @Override
+    protected void initComponent() {
+        PhotoCardScreen.Component component = ScreenScoper.getComponent(ScreenScoper.PHOTO_CARD_SCOPE_NAME);
+        if (component != null)
+            component.inject(this);
+    }
+
+    //endregion
 }

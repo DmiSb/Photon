@@ -5,6 +5,7 @@ import android.databinding.Bindable;
 
 import ru.dmisb.photon.BR;
 
+@SuppressWarnings("unused")
 public class AlbumViewModel extends BaseObservable {
     private String id;
     private String title;

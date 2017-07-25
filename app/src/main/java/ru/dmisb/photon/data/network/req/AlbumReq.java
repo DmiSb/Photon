@@ -1,5 +1,6 @@
 package ru.dmisb.photon.data.network.req;
 
+@SuppressWarnings("unused")
 public class AlbumReq {
     private String owner;
     private String title;

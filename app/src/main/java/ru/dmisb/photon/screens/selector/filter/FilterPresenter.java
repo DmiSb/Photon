@@ -10,6 +10,19 @@ public class FilterPresenter
 
     private FilterViewModel viewModel = new FilterViewModel();
 
+    //region ================= IFilterPresenter =================
+
+    @Override
+    public void filterActionClick() {
+        if (viewModel.filterChanged())
+            model.setFilter(new FilterDto(viewModel));
+        else
+            model.clearFilter();
+        rootPresenter.showMainScreen();
+    }
+
+    //endregion
+
     //region ================= BasePresenter =================
 
     @Override
@@ -35,18 +48,4 @@ public class FilterPresenter
     }
 
     //endregion
-
-    //region ================= IFilterPresenter =================
-
-    @Override
-    public void filterActionClick() {
-        if (viewModel.filterChanged())
-            model.setFilter(new FilterDto(viewModel));
-        else
-            model.clearFilter();
-        rootPresenter.showMainScreen();
-    }
-
-    //endregion
-
 }

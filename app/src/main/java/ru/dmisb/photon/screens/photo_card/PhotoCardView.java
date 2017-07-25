@@ -13,12 +13,33 @@ import ru.dmisb.photon.databinding.ScreenPhotoCardBinding;
 import ru.dmisb.photon.flow.ScreenScoper;
 import ru.dmisb.photon.ui.custom_view.TagTextView;
 
+@SuppressWarnings("unused")
 public class PhotoCardView extends BaseView<PhotoCardPresenter, ScreenPhotoCardBinding> {
 
     private boolean tagBorderBlack = true;
 
     public PhotoCardView(@NonNull Context context, @Nullable AttributeSet attrs) {
         super(context, attrs);
+    }
+
+    void setViewModel(PhotoCardRealm photoCard) {
+        viewDataBinding.setModel(photoCard);
+
+        for (TagRealm tagRealm : photoCard.getTags()) {
+            addTag(tagRealm.getTag());
+        }
+    }
+
+    void bindUser(UserRealm user) {
+        viewDataBinding.setOwner(user);
+    }
+
+    private void addTag(String tag) {
+        TagTextView view = new TagTextView(getContext());
+        view.setTagText(tag);
+        view.setSelected(tagBorderBlack);
+        viewDataBinding.photoCardTagList.addView(view);
+        tagBorderBlack = !tagBorderBlack;
     }
 
     //region ================= BaseView =================
@@ -46,24 +67,4 @@ public class PhotoCardView extends BaseView<PhotoCardPresenter, ScreenPhotoCardB
     }
 
     //endregion
-
-    void setViewModel(PhotoCardRealm photoCard) {
-        viewDataBinding.setModel(photoCard);
-
-        for (TagRealm tagRealm : photoCard.getTags()) {
-            addTag(tagRealm.getTag());
-        }
-    }
-
-    void bindUser(UserRealm user) {
-        viewDataBinding.setOwner(user);
-    }
-
-    private void addTag(String tag) {
-        TagTextView view = new TagTextView(getContext());
-        view.setTagText(tag);
-        view.setSelected(tagBorderBlack);
-        viewDataBinding.photoCardTagList.addView(view);
-        tagBorderBlack = !tagBorderBlack;
-    }
 }

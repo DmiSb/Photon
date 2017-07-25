@@ -6,13 +6,6 @@ import ru.dmisb.photon.flow.ScreenScoper;
 
 public class FilterModel extends BaseModel {
 
-    @Override
-    protected void initComponent() {
-        FilterScreen.Component component = ScreenScoper.getComponent(ScreenScoper.FILTER_SCOPE_NAME);
-        if (component != null)
-            component.inject(this);
-    }
-
     void setFilter(FilterDto filter) {
         repository.setFilter(filter);
     }
@@ -24,4 +17,16 @@ public class FilterModel extends BaseModel {
     void clearFilter() {
         repository.clearFilter();
     }
+
+    //region ================= BaseModel =================
+
+    @Override
+    protected void initComponent() {
+        FilterScreen.Component component = ScreenScoper.getComponent(ScreenScoper.FILTER_SCOPE_NAME);
+        if (component != null)
+            component.inject(this);
+    }
+
+    //endregion
+
 }

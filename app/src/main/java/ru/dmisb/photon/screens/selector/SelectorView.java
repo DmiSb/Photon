@@ -11,12 +11,17 @@ import ru.dmisb.photon.core.BaseView;
 import ru.dmisb.photon.databinding.ScreenSelectorBinding;
 import ru.dmisb.photon.flow.ScreenScoper;
 
+@SuppressWarnings("unused")
 public class SelectorView extends BaseView<SelectorPresenter, ScreenSelectorBinding> {
 
     private SelectorAdapter adapter = new SelectorAdapter();
 
     public SelectorView(@NonNull Context context, @Nullable AttributeSet attrs) {
         super(context, attrs);
+    }
+
+    ViewPager getViewPager() {
+        return viewDataBinding.selectorPager;
     }
 
     //region ================= BaseView =================
@@ -54,8 +59,4 @@ public class SelectorView extends BaseView<SelectorPresenter, ScreenSelectorBind
     }
 
     //endregion
-
-    ViewPager getViewPager() {
-        return viewDataBinding.selectorPager;
-    }
 }

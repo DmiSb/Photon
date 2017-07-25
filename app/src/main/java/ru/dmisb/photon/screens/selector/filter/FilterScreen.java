@@ -32,6 +32,7 @@ public class FilterScreen extends BaseScreen<SelectorScreen.Component> {
 
     //region ================= DI =================
 
+    @SuppressWarnings("unused")
     @dagger.Module
     public class Module {
         @Provides

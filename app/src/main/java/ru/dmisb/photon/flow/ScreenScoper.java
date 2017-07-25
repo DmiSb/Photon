@@ -8,7 +8,7 @@ import mortar.MortarScope;
 import ru.dmisb.photon.core.BaseScreen;
 
 public class ScreenScoper {
-    public static final String SCOPE_SERVICE_NANE = "SCOPE_SERVICE_NANE";
+    public static final String SCOPE_SERVICE_NAME = "SCOPE_SERVICE_NAME";
 
     public static final String APP_SCOPE_NAME = "APP_SCOPE";
     public static final String ROOT_SCOPE_NAME = "ROOT_SCOPE";
@@ -39,10 +39,10 @@ public class ScreenScoper {
     private static MortarScope createScreenScope(BaseScreen screen) {
         MortarScope parentScope = scopeMap.get(screen.getParentScopeName());
         if (parentScope != null) {
-            Object screenComponent = screen.createScreenComponent(parentScope.getService(SCOPE_SERVICE_NANE));
+            Object screenComponent = screen.createScreenComponent(parentScope.getService(SCOPE_SERVICE_NAME));
 
             MortarScope newScope = parentScope.buildChild()
-                    .withService(SCOPE_SERVICE_NANE, screenComponent)
+                    .withService(SCOPE_SERVICE_NAME, screenComponent)
                     .build(screen.getScopeName());
             registerScope(newScope);
             return newScope;
@@ -58,7 +58,7 @@ public class ScreenScoper {
     @SuppressWarnings("unchecked")
     public static <T> T getComponent(String scopeName) {
         MortarScope scope = scopeMap.get(scopeName);
-        return scope == null ? null : (T) scope.getService(SCOPE_SERVICE_NANE);
+        return scope == null ? null : (T) scope.getService(SCOPE_SERVICE_NAME);
     }
 
     public static void destroyScreenScope(String scopeName) {

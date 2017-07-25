@@ -5,6 +5,7 @@ import android.databinding.Bindable;
 
 import ru.dmisb.photon.data.dto.FilterDto;
 
+@SuppressWarnings("unused")
 public class FilterViewModel extends BaseObservable {
     private boolean meat;
     private boolean fish;
