@@ -1,0 +1,132 @@
+<resources>
+    <string name="app_name">Photon</string>
+
+    <!-- common string -->
+    <string name="search">Поиск</string>
+    <string name="login">Войти</string>
+    <string name="logout">Выйти</string>
+    <string name="register">Зарегистрироваться</string>
+    <string name="photo_add">Загрузить</string>
+    <string name="menu">Меню</string>
+    
+    <string name="ok">Ок</string>
+    <string name="cancel">Отмена</string>
+    <string name="find">Найти</string>
+
+    <!-- error string -->
+    <string name="err_network_not_available">Интренет недоступен, попробуйте позже</string>
+    <string name="err_unknown">Неизвестная ошибка</string>
+    <string name="err_user_not_found">Пользователь с таким Email не зарегистрирован</string>
+    <string name="err_server">Ошибка сервера</string>
+
+    <!-- screen_main -->
+    <string name="main_title">Фотон</string>
+    <string name="main_action">Главная</string>
+
+    <string name="send_to_support">Связаться с разработчиками</string>
+    <string name="send_subject">Техподдержка Фотон</string>
+    
+    <!-- screen_photo_card -->
+    <string name="photo_card_title">Фотокарточка</string>
+    <string name="photo_card_count">Карты</string>
+    <string name="photo_card_albums">Альбомы</string>
+
+    <!-- dialog_auth -->
+    <string name="auth_title">Вход в аккаунт</string>
+    <string name="auth_email">Email</string>
+    <string name="auth_password">Пароль</string>
+    <string name="auth_success">Успешная авторизация</string>
+
+    <!-- dialog_register -->
+    <string name="register_title">Регистрация</string>
+    <string name="register_login">Логин</string>
+    <string name="register_name">Имя</string>
+    <string name="register_success">Успешная регистрация</string>
+
+    <!-- screen_profile -->
+    <string name="profile_action">Профиль</string>
+    <string name="profile_auth_tex" formatted="false">Авторизуйтесь,\n чтобы посмотреть\n данные профиля</string>
+    <string name="profile_auth">Вход</string>
+    <string name="profile_empty" formatted="false">У вас нет альбомов.\n Добавьте новый, чтобы\n сохранять карточки</string>
+    <string name="profile_add_album">Добавить альбом</string>
+    <string name="profile_edit">Изменить</string>
+    <string name="profile_delete_album">Удалить альбом ?</string>
+    <string name="profile_cards">Карты</string>
+
+    <!-- dialog_album -->
+    <string name="album_add_title">Новый альбом</string>
+    <string name="album_edit_title">Редактировать альбом</string>
+    <string name="album_add_name">Имя</string>
+    <string name="album_add_description">Описание</string>
+
+    <!-- screen_filter -->
+    <string name="filter_title">Фильтры</string>
+    <string name="filter_dish">Блюдо</string>
+    <string name="filer_meat">Мясо</string>
+    <string name="filter_fish">Рыба</string>
+    <string name="filter_vegetables">Овощи</string>
+    <string name="filer_fruit">Фрукты</string>
+    <string name="filter_cheese">Сыр</string>
+    <string name="filter_dessert">Десерты</string>
+    <string name="filter_drinks">Напитки</string>
+    <string name="filter_nuances">Оттенки</string>
+    <string name="filter_design">Оформление</string>
+    <string name="filter_normal">Обычное</string>
+    <string name="filter_holiday">Праздничное</string>
+    <string name="filter_temperature">Температура</string>
+    <string name="filter_temperature_hot">Горячая</string>
+    <string name="filter_temperature_comfort">Комнатная</string>
+    <string name="filter_temperature_cold">Холодная</string>
+    <string name="filter_light">Свет</string>
+    <string name="filter_light_natural">Естественный</string>
+    <string name="filter_light_synthetic">Искуственный</string>
+    <string name="filter_light_mixed">Смешанный</string>
+    <string name="filter_light_direction">Направление света</string>
+    <string name="filter_light_dir_front">Прямой</string>
+    <string name="filter_light_dir_back">Контровой</string>
+    <string name="filter_light_dir_side">Боковой</string>
+    <string name="filter_light_dir_mixed">Смешанный</string>
+    <string name="filter_light_count">Источники света</string>
+    <string name="filter_light_count_1">Один</string>
+    <string name="filter_light_count_2">Два</string>
+    <string name="filter_light_count_3">Три</string>
+    <string name="filter_nuances_red">Красный</string>
+    <string name="filter_nuances_orange">Оранжевый</string>
+    <string name="filter_nuances_yellow">Желтый</string>
+    <string name="filter_nuances_green">Зеленый</string>
+    <string name="filter_nuances_light_blue">Голубой</string>
+    <string name="filter_nuances_blue">Синий</string>
+    <string name="filter_nuances_violet">Фиолетовый</string>
+    <string name="filter_nuances_brown">Коричневый</string>
+    <string name="filter_nuances_black">Черный</string>
+    <string name="filter_nuances_white">Белый</string>
+    <string name="filter_enabled">Применены фильтры</string>
+    <string name="filter_disable">Сбросить фильтры</string>
+
+    <!-- screen_search -->
+    <string name="search_title">Поиск</string>
+    <string name="search_tags">Теги</string>
+
+    <!-- screen_album -->
+    <string name="album_menu">Меню</string>
+    <string name="album_add_photo">Добавить фото</string>
+    <string name="album_edit">Редактировать альбом</string>
+    <string name="album_delete">Удалить альбом</string>
+    <string name="album_cards">Карты</string>
+
+    <!-- screen_upload -->
+    <string name="upload_text">Выберите фотокарточку\n из галереи и добавьте\n к вашим альбомам</string>
+    <string name="upload_select">Выбрать фото</string>
+
+    <!-- screen_new_card -->
+    <string name="new_card_title">Название</string>
+    <string name="new_card_input_params">Укажите параметры фотографии</string>
+    <string name="new_card_input_title">Укажите название фотографии</string>
+    <string name="new_card_input_tags">Укажите теги</string>
+    <string name="new_card_tag">Имя тега</string>
+    <string name="new_card_save">Сохранить</string>
+    <string name="new_card_select_album">Выберите альбом</string>
+    <string name="new_card_add_album">У вас нет альбомов.\n Добавьте новый, чтобы\n сохранять карточки</string>
+    <string name="new_card_add_album_action">Добавить</string>
+
+</resources>

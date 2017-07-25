@@ -1,0 +1,286 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<layout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+        <variable
+            name="params"
+            type="ru.dmisb.photon.screens.selector.filter.FilterViewModel"/>
+    </data>
+
+    <com.google.android.flexbox.FlexboxLayout
+        style="@style/CustomFullWidth"
+        android:background="@color/colorPrimary"
+        app:flexWrap="wrap"
+        app:showDivider="middle"
+        app:dividerDrawable="@drawable/tag_divider"
+        app:justifyContent="space_around">
+
+        <TextView
+            style="@style/FilterHeader"
+            android:layout_marginTop="@dimen/size_16"
+            android:text="@string/filter_dish"/>
+
+        <ru.dmisb.photon.ui.custom_view.FilterTextView
+            android:id="@+id/filter_meat"
+            style="@style/FilterIco"
+            android:drawableTop="@drawable/ic_meat"
+            android:text="@string/filer_meat"
+            app:filtered="@={params.meat}"/>
+
+        <ru.dmisb.photon.ui.custom_view.FilterTextView
+            android:id="@+id/filter_fish"
+            style="@style/FilterIco"
+            android:drawableTop="@drawable/ic_fish"
+            android:text="@string/filter_fish"
+            app:filtered="@={params.fish}"/>
+
+        <ru.dmisb.photon.ui.custom_view.FilterTextView
+            android:id="@+id/filter_vegetables"
+            style="@style/FilterIco"
+            android:drawableTop="@drawable/ic_vegetables"
+            android:text="@string/filter_vegetables"
+            app:filtered="@={params.vegetables}"/>
+
+        <ru.dmisb.photon.ui.custom_view.FilterTextView
+            android:id="@+id/filter_fruit"
+            style="@style/FilterIco"
+            android:drawableTop="@drawable/ic_fruit"
+            android:text="@string/filer_fruit"
+            app:filtered="@={params.fruit}"/>
+
+        <ru.dmisb.photon.ui.custom_view.FilterTextView
+            android:id="@+id/filter_cheese"
+            style="@style/FilterIco"
+            android:drawableTop="@drawable/ic_cheese"
+            android:text="@string/filter_cheese"
+            app:filtered="@={params.cheese}"/>
+
+        <ru.dmisb.photon.ui.custom_view.FilterTextView
+            android:id="@+id/filter_desert"
+            style="@style/FilterIco"
+            android:drawableTop="@drawable/ic_desserts"
+            android:text="@string/filter_dessert"
+            app:filtered="@={params.desert}"/>
+
+        <ru.dmisb.photon.ui.custom_view.FilterTextView
+            android:id="@+id/filter_drinks"
+            style="@style/FilterIco"
+            android:drawableTop="@drawable/ic_drinks"
+            android:text="@string/filter_drinks"
+            app:filtered="@={params.drinks}"/>
+
+        <TextView
+            style="@style/FilterHeader"
+            android:text="@string/filter_nuances"/>
+
+        <ru.dmisb.photon.ui.custom_view.FilterTextView
+            android:id="@+id/filter_nuances_red"
+            style="@style/FilterIco"
+            android:drawableTop="@drawable/circle_red"
+            android:text="@string/filter_nuances_red"
+            app:shade="true"
+            app:filtered="@={params.nuancesRed}"/>
+
+        <ru.dmisb.photon.ui.custom_view.FilterTextView
+            android:id="@+id/filter_nuances_orange"
+            style="@style/FilterIco"
+            android:drawableTop="@drawable/circle_orange"
+            android:text="@string/filter_nuances_orange"
+            app:shade="true"
+            app:filtered="@={params.nuancesOrange}"/>
+
+        <ru.dmisb.photon.ui.custom_view.FilterTextView
+            android:id="@+id/filter_nuances_yellow"
+            style="@style/FilterIco"
+            android:drawableTop="@drawable/circle_yellow"
+            android:text="@string/filter_nuances_yellow"
+            app:shade="true"
+            app:filtered="@={params.nuancesYellow}"/>
+
+        <ru.dmisb.photon.ui.custom_view.FilterTextView
+            android:id="@+id/filter_nuances_green"
+            style="@style/FilterIco"
+            android:drawableTop="@drawable/circle_green"
+            android:text="@string/filter_nuances_green"
+            app:shade="true"
+            app:filtered="@={params.nuancesGreen}"/>
+
+        <ru.dmisb.photon.ui.custom_view.FilterTextView
+            android:id="@+id/filter_nuances_light_blue"
+            style="@style/FilterIco"
+            android:drawableTop="@drawable/circle_light_blue"
+            android:text="@string/filter_nuances_light_blue"
+            app:shade="true"
+            app:filtered="@={params.nuancesLightBlue}"/>
+
+        <ru.dmisb.photon.ui.custom_view.FilterTextView
+            android:id="@+id/filter_nuances_blue"
+            style="@style/FilterIco"
+            android:drawableTop="@drawable/circle_blue"
+            android:text="@string/filter_nuances_blue"
+            app:shade="true"
+            app:filtered="@={params.nuancesBlue}"/>
+
+        <ru.dmisb.photon.ui.custom_view.FilterTextView
+            android:id="@+id/filter_nuances_violet"
+            style="@style/FilterIco"
+            android:drawableTop="@drawable/circle_purple"
+            android:text="@string/filter_nuances_violet"
+            app:shade="true"
+            app:filtered="@={params.nuancesViolet}"/>
+
+        <ru.dmisb.photon.ui.custom_view.FilterTextView
+            android:id="@+id/filter_nuances_brown"
+            style="@style/FilterIco"
+            android:drawableTop="@drawable/circle_brown"
+            android:text="@string/filter_nuances_brown"
+            app:shade="true"
+            app:filtered="@={params.nuancesBrown}"/>
+
+        <ru.dmisb.photon.ui.custom_view.FilterTextView
+            android:id="@+id/filter_nuances_black"
+            style="@style/FilterIco"
+            android:drawableTop="@drawable/circle_black"
+            android:text="@string/filter_nuances_black"
+            app:shade="true"
+            app:filtered="@={params.nuancesBlack}"/>
+
+        <ru.dmisb.photon.ui.custom_view.FilterTextView
+            android:id="@+id/filter_nuances_white"
+            style="@style/FilterIco"
+            android:drawableTop="@drawable/circle_white"
+            android:text="@string/filter_nuances_white"
+            app:shade="true"
+            app:filtered="@={params.nuancesWhite}"/>
+
+        <TextView
+            style="@style/FilterHeader"
+            android:text="@string/filter_design"/>
+
+        <ru.dmisb.photon.ui.custom_view.FilterTextView
+            android:id="@+id/filter_decor_simple"
+            style="@style/FilterIco"
+            android:drawableTop="@drawable/ic_tea"
+            android:text="@string/filter_normal"
+            app:filtered="@={params.decorSimple}"/>
+
+        <ru.dmisb.photon.ui.custom_view.FilterTextView
+            android:id="@+id/filter_decor_holiday"
+            style="@style/FilterIco"
+            android:drawableTop="@drawable/ic_cocktail"
+            android:text="@string/filter_holiday"
+            app:filtered="@={params.decorHoliday}"/>
+
+        <TextView
+            style="@style/FilterHeader"
+            android:text="@string/filter_temperature"/>
+
+        <ru.dmisb.photon.ui.custom_view.FilterTextView
+            android:id="@+id/filter_temperature_hot"
+            style="@style/FilterIco"
+            android:drawableTop="@drawable/ic_temperature_hot"
+            android:text="@string/filter_temperature_hot"
+            app:filtered="@={params.temperatureHot}"/>
+
+        <ru.dmisb.photon.ui.custom_view.FilterTextView
+            android:id="@+id/filter_temperature_middle"
+            style="@style/FilterIco"
+            android:drawableTop="@drawable/ic_temperature_middle"
+            android:text="@string/filter_temperature_comfort"
+            app:filtered="@={params.temperatureMiddle}"/>
+
+        <ru.dmisb.photon.ui.custom_view.FilterTextView
+            android:id="@+id/filter_temperature_cold"
+            style="@style/FilterIco"
+            android:drawableTop="@drawable/ic_temperature_cold"
+            android:text="@string/filter_temperature_cold"
+            app:filtered="@={params.temperatureCold}"/>
+
+        <TextView
+            style="@style/FilterHeader"
+            android:text="@string/filter_light"/>
+
+        <ru.dmisb.photon.ui.custom_view.FilterTextView
+            android:id="@+id/filter_light_natural"
+            style="@style/FilterIco"
+            android:drawableTop="@drawable/ic_light_natural"
+            android:text="@string/filter_light_natural"
+            app:filtered="@={params.lightNatural}"/>
+
+        <ru.dmisb.photon.ui.custom_view.FilterTextView
+            android:id="@+id/filter_light_synthetic"
+            style="@style/FilterIco"
+            android:drawableTop="@drawable/ic_light_synthetic"
+            android:text="@string/filter_light_synthetic"
+            app:filtered="@={params.lightSynthetic}"/>
+
+        <ru.dmisb.photon.ui.custom_view.FilterTextView
+            android:id="@+id/filter_light_mixed"
+            style="@style/FilterIco"
+            android:drawableTop="@drawable/ic_light_mixed"
+            android:text="@string/filter_light_mixed"
+            app:filtered="@={params.lightMixed}"/>
+
+        <TextView
+            style="@style/FilterHeader"
+            android:text="@string/filter_light_direction"/>
+
+        <ru.dmisb.photon.ui.custom_view.FilterTextView
+            android:id="@+id/filter_light_dir_front"
+            style="@style/FilterIco"
+            android:drawableTop="@drawable/ic_light_dir_front"
+            android:text="@string/filter_light_dir_front"
+            app:filtered="@={params.lightDirDirect}"/>
+
+        <ru.dmisb.photon.ui.custom_view.FilterTextView
+            android:id="@+id/filter_light_dir_back"
+            style="@style/FilterIco"
+            android:drawableTop="@drawable/ic_light_dir_back"
+            android:text="@string/filter_light_dir_back"
+            app:filtered="@={params.lightDirBack}"/>
+
+        <ru.dmisb.photon.ui.custom_view.FilterTextView
+            android:id="@+id/filter_light_dir_side"
+            style="@style/FilterIco"
+            android:drawableTop="@drawable/ic_light_dir_side"
+            android:text="@string/filter_light_dir_side"
+            app:filtered="@={params.lightDirSide}"/>
+
+        <ru.dmisb.photon.ui.custom_view.FilterTextView
+            android:id="@+id/filter_light_dir_mixed"
+            style="@style/FilterIco"
+            android:drawableTop="@drawable/ic_light_dir_mixed"
+            android:text="@string/filter_light_dir_mixed"
+            app:filtered="@={params.lightDirMixed}"/>
+
+        <TextView
+            style="@style/FilterHeader"
+            android:text="@string/filter_light_count"/>
+
+        <ru.dmisb.photon.ui.custom_view.FilterTextView
+            android:id="@+id/filter_light_count_1"
+            style="@style/FilterIco"
+            android:drawableTop="@drawable/ic_light_count_1"
+            android:text="@string/filter_light_count_1"
+            app:filtered="@={params.lightCount1}"/>
+
+        <ru.dmisb.photon.ui.custom_view.FilterTextView
+            android:id="@+id/filter_light_count_2"
+            style="@style/FilterIco"
+            android:drawableTop="@drawable/ic_light_count_2"
+            android:text="@string/filter_light_count_2"
+            app:filtered="@={params.lightCount2}"/>
+
+        <ru.dmisb.photon.ui.custom_view.FilterTextView
+            android:id="@+id/filter_light_count_3"
+            style="@style/FilterIco"
+            android:drawableTop="@drawable/ic_light_count_3"
+            android:text="@string/filter_light_count_3"
+            app:filtered="@={params.lightCount3}"/>
+
+    </com.google.android.flexbox.FlexboxLayout>
+</layout>
+

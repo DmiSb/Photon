@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+        <variable
+            name="model"
+            type="ru.dmisb.photon.ui.dialogs.album.AlbumViewModel"/>
+    </data>
+
+    <LinearLayout
+        style="@style/CustomFullExpand"
+        android:orientation="vertical"
+        android:background="@color/colorPrimary"
+        android:padding="@dimen/size_16">
+
+        <RelativeLayout
+            android:id="@+id/album_name_wrp"
+            style="@style/DialogEditWrapper"
+            app:validName="@{model}">
+
+            <android.support.design.widget.TextInputLayout
+                style="@style/DialogEditTextLayout">
+
+                <EditText
+                    android:id="@+id/album_name_ed"
+                    style="@style/CustomEditText"
+                    android:theme="@style/EditTextTheme"
+                    android:inputType="textPersonName|textCapSentences"
+                    android:imeOptions="actionNext"
+                    android:nextFocusDown="@+id/album_description_ed"
+                    android:hint="@string/album_add_name"
+                    android:text="@={model.name}"/>
+
+            </android.support.design.widget.TextInputLayout>
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/album_description_wrp"
+            style="@style/DialogEditWrapper"
+            app:validDescription="@{model}">
+
+            <android.support.design.widget.TextInputLayout
+                style="@style/DialogEditTextLayout">
+
+                <EditText
+                    android:id="@+id/album_description_ed"
+                    style="@style/CustomEditText"
+                    android:theme="@style/EditTextTheme"
+                    android:inputType="text|textCapSentences"
+                    android:maxLength="24"
+                    android:imeOptions="actionDone"
+                    android:hint="@string/album_add_description"
+                    android:text="@={model.description}"/>
+
+            </android.support.design.widget.TextInputLayout>
+
+        </RelativeLayout>
+
+        <LinearLayout
+            style="@style/CustomFullWidth"
+            android:layout_marginTop="@dimen/size_16">
+
+            <Button
+                android:id="@+id/album_ok"
+                style="@style/DialogButton"
+                android:theme="@style/ButtonTheme"
+                android:text="@string/ok"
+                app:canAdd="@{model}"/>
+
+            <Button
+                android:id="@+id/album_cancel"
+                style="@style/DialogButton"
+                android:theme="@style/ButtonTheme"
+                android:text="@string/cancel"/>
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+</layout>
+

@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <data>
+        <variable
+            name="tag"
+            type="String"/>
+    </data>
+
+    <LinearLayout
+        style="@style/CustomFullWidth"
+        android:background="@color/colorPrimary"
+        android:layout_margin="@dimen/size_16">
+
+        <TextView
+            style="@style/CustomFullWidth"
+            android:textSize="@dimen/font_16"
+            android:textColor="@color/black"
+            android:text="@{tag}"/>
+
+    </LinearLayout>
+
+</layout>
+

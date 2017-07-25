@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable
+            name="model"
+            type="ru.dmisb.photon.screens.album.AlbumViewModel"/>
+    </data>
+    
+    <ru.dmisb.photon.screens.album.AlbumView
+        style="@style/CustomFullExpand"
+        android:background="@color/colorPrimary">
+
+        <LinearLayout style="@style/CustomFullExpand">
+
+            <LinearLayout
+                style="@style/CustomFullWidth"
+                android:layout_marginBottom="@dimen/size_24"
+                android:layout_marginLeft="@dimen/size_16"
+                android:layout_marginRight="@dimen/size_16"
+                android:layout_marginTop="@dimen/size_24">
+
+                <LinearLayout
+                    style="@style/CustomFullHeight"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/album_title"
+                        style="@style/CustomWrap"
+                        android:text="@{model.title}"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/font_16"
+                        tools:text="Закуски" />
+
+                    <TextView
+                        style="@style/CustomWrap"
+                        android:layout_marginTop="@dimen/size_16"
+                        android:text="@string/album_cards"
+                        android:textSize="@dimen/font_16" />
+
+                    <TextView
+                        android:id="@+id/album_card_count"
+                        style="@style/CustomWrap"
+                        android:layout_marginTop="@dimen/size_8"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/font_16"
+                        android:text="@{model.cardsCount}"
+                        tools:text="9" />
+
+                </LinearLayout>
+
+                <TextView
+                    android:id="@+id/album_description"
+                    style="@style/CustomFullExpand"
+                    android:layout_marginLeft="@dimen/size_24"
+                    android:textSize="@dimen/font_16"
+                    android:text="@{model.description}"
+                    tools:text="Разные закуски"/>
+
+            </LinearLayout>
+
+            <android.support.v7.widget.RecyclerView
+                android:id="@+id/album_photo_card_list"
+                style="@style/CustomFullExpand" />
+
+        </LinearLayout>
+
+    </ru.dmisb.photon.screens.album.AlbumView>
+
+</layout>

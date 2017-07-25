@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <ru.dmisb.photon.screens.selector.search.SearchView
+        style="@style/CustomFullExpand"
+        android:background="@color/colorPrimary">
+
+        <android.support.v4.widget.NestedScrollView
+            style="@style/CustomFullExpand">
+
+            <LinearLayout
+                style="@style/CustomFullExpand"
+                android:orientation="vertical">
+
+                <LinearLayout
+                    style="@style/SearchWrapper">
+
+                    <android.support.design.widget.TextInputLayout
+                        style="@style/SearchTextLayout"
+                        app:hintTextAppearance="@style/EditTextAppearance">
+
+                        <EditText
+                            android:id="@+id/search_text"
+                            style="@style/SearchEditText"
+                            android:theme="@style/EditTextTheme"
+                            android:inputType="text"
+                            android:imeOptions="actionDone"
+                            android:hint="@string/search_title"/>
+
+                    </android.support.design.widget.TextInputLayout>
+
+                    <ImageView
+                        android:id="@+id/search_action"
+                        style="@style/SearchImgButton"
+                        android:src="@drawable/ic_check"
+                        tools:ignore="ContentDescription"/>
+
+                    <ImageView
+                        android:id="@+id/search_delete"
+                        style="@style/SearchImgButton"
+                        android:src="@drawable/ic_cancel"
+                        tools:ignore="ContentDescription"/>
+
+                </LinearLayout>
+
+                <View
+                    style="@style/LineStyle"/>
+
+                <LinearLayout
+                    android:id="@+id/search_hints"
+                    style="@style/CustomFullWidth"
+                    android:orientation="vertical"/>
+
+                <View
+                    style="@style/LineStyle"/>
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/size_56"
+                    android:paddingLeft="@dimen/size_16"
+                    android:gravity="center_vertical"
+                    android:textSize="@dimen/font_20"
+                    android:textColor="@color/black"
+                    android:text="@string/search_tags"/>
+
+                <com.google.android.flexbox.FlexboxLayout
+                    android:id="@+id/search_tags"
+                    style="@style/CustomFullExpand"
+                    android:padding="@dimen/size_16"
+                    app:flexWrap="wrap"
+                    app:showDivider="middle"
+                    app:dividerDrawable="@drawable/tag_divider"/>
+
+            </LinearLayout>
+
+        </android.support.v4.widget.NestedScrollView>
+
+    </ru.dmisb.photon.screens.selector.search.SearchView>
+
+</layout>
+

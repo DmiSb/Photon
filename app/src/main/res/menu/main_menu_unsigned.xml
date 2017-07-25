@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/main_login_action"
+        android:title="@string/login"/>
+    <item
+        android:id="@+id/main_register_action"
+        android:title="@string/register"/>
+    <item
+        android:id="@+id/main_send_to_support"
+        android:icon="@drawable/ic_send"
+        android:title="@string/send_to_support"/>
+</menu>

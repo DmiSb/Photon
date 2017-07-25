@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<layout
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <LinearLayout
+        style="@style/CustomFullExpand"
+        android:background="@color/colorPrimary"
+        android:orientation="vertical"
+        android:gravity="center">
+
+        <LinearLayout
+            style="@style/CustomFullWidth"
+            android:orientation="vertical"
+            android:layout_margin="@dimen/size_72">
+
+            <TextView
+                style="@style/CustomWrap"
+                android:layout_gravity="center"
+                android:gravity="center"
+                android:textSize="@dimen/font_20"
+                android:textColor="@color/black"
+                android:text="@string/profile_auth_tex"/>
+
+            <Button
+                android:id="@+id/profile_register"
+                style="@style/ProfileButton"
+                android:layout_marginTop="@dimen/size_24"
+                android:theme="@style/ButtonTheme"
+                android:text="@string/register_title"/>
+
+            <Button
+                android:id="@+id/profile_auth"
+                style="@style/ProfileButton"
+                android:layout_marginTop="@dimen/size_16"
+                android:theme="@style/ButtonTheme"
+                android:textSize="@dimen/font_16"
+                android:text="@string/profile_auth"/>
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+</layout>
+

@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<layout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable
+            name="model"
+            type="ru.dmisb.photon.data.storage.entities.AlbumRealm"/>
+    </data>
+
+    <RelativeLayout
+        style="@style/CustomFullExpand">
+
+        <ImageView
+            android:id="@+id/portfolio_album_photo"
+            style="@style/CustomFullExpand"
+            android:background="@drawable/album_gradient"
+            app:imageUrl="@{model.preview}"
+            app:placeholder="@{@drawable/placeholder}"
+            tools:ignore="ContentDescription"/>
+
+        <LinearLayout
+            style="@style/CustomWrap"
+            android:orientation="vertical"
+            android:layout_marginLeft="@dimen/size_16">
+
+            <TextView
+                android:id="@+id/profile_album_title"
+                style="@style/ProfileAlbumCaption"
+                android:text="@{model.title}"
+                android:textStyle="bold"
+                tools:text="Избранное"/>
+
+            <TextView
+                style="@style/ProfileAlbumCaption"
+                android:text="@string/profile_cards"/>
+
+            <TextView
+                style="@style/ProfileAlbumCaption"
+                android:text="@{model.photoCardCount}"
+                android:textStyle="bold"
+                tools:text="0"/>
+
+        </LinearLayout>
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/size_56"
+            android:orientation="horizontal"
+            android:padding="@dimen/size_16"
+            android:layout_alignParentBottom="true"
+            android:background="@drawable/caption_gradient">
+
+            <TextView
+                android:id="@+id/profile_album_favorites"
+                style="@style/MainItemText"
+                android:drawableLeft="@drawable/ic_favorites"
+                android:text="@{model.favoritsStr}"
+                tools:text="56"/>
+
+            <TextView
+                android:id="@+id/profile_album_views_views"
+                style="@style/MainItemText"
+                android:drawableLeft="@drawable/ic_views"
+                android:text="@{model.viewsStr}"
+                tools:text="5"/>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/profile_album_menu"
+            style="@style/CustomFullExpand"
+            android:orientation="horizontal"
+            android:background="@color/black"
+            android:alpha="0.75"
+            android:gravity="center"
+            android:visibility="gone">
+
+            <ImageView
+                android:id="@+id/profile_album_edit"
+                android:layout_width="@dimen/size_48"
+                android:layout_height="@dimen/size_48"
+                android:padding="@dimen/size_12"
+                android:src="@drawable/ic_edit"
+                android:tint="@color/colorPrimary"
+                tools:ignore="ContentDescription"/>
+
+            <ImageView
+                android:id="@+id/profile_album_delete"
+                android:layout_width="@dimen/size_48"
+                android:layout_height="@dimen/size_48"
+                android:padding="@dimen/size_12"
+                android:src="@drawable/ic_delete"
+                android:tint="@color/colorPrimary"
+                tools:ignore="ContentDescription"/>
+
+        </LinearLayout>
+
+    </RelativeLayout>
+
+</layout>
+

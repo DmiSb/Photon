@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<layout
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <ru.dmisb.photon.screens.upload.UploadView
+        style="@style/CustomFullExpand"
+        android:background="@color/colorPrimary">
+
+        <LinearLayout
+            style="@style/CustomFullWidth"
+            android:orientation="vertical"
+            android:layout_gravity="center"
+            android:gravity="center_horizontal">
+
+            <TextView
+                style="@style/CustomWrap"
+                android:textSize="@dimen/font_16"
+                android:textColor="@color/black"
+                android:text="@string/upload_text"/>
+
+            <Button
+                android:id="@+id/upload_select_btn"
+                android:layout_width="wrap_content"
+                android:layout_height="@dimen/size_56"
+                android:layout_marginTop="@dimen/size_24"
+                android:paddingLeft="@dimen/size_32"
+                android:paddingRight="@dimen/size_32"
+                android:theme="@style/ButtonTheme"
+                android:text="@string/upload_select"/>
+
+        </LinearLayout>
+
+    </ru.dmisb.photon.screens.upload.UploadView>
+
+</layout>
+

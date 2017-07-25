@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<layout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable
+            name="model"
+            type="ru.dmisb.photon.screens.new_card.NewCardAlbum"/>
+    </data>
+
+    <RelativeLayout
+        style="@style/CustomFullExpand">
+
+        <ImageView
+            android:id="@+id/album_photo"
+            style="@style/CustomFullExpand"
+            app:imageUrl="@{model.preview}"
+            app:placeholder="@{@drawable/placeholder}"
+            app:selected="@{model}"
+            tools:background="@drawable/album_gradient"
+            tools:ignore="ContentDescription"/>
+
+        <LinearLayout
+            style="@style/CustomWrap"
+            android:orientation="vertical"
+            android:layout_marginLeft="@dimen/size_16">
+
+            <TextView
+                android:id="@+id/album_title"
+                style="@style/ProfileAlbumCaption"
+                android:text="@{model.title}"
+                android:textStyle="bold"
+                tools:text="Избранное"/>
+
+            <TextView
+                style="@style/ProfileAlbumCaption"
+                android:text="@string/profile_cards"/>
+
+            <TextView
+                style="@style/ProfileAlbumCaption"
+                android:text="@{model.cardCount}"
+                android:textStyle="bold"
+                tools:text="0"/>
+
+        </LinearLayout>
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/size_56"
+            android:orientation="horizontal"
+            android:padding="@dimen/size_16"
+            android:layout_alignParentBottom="true"
+            android:background="@drawable/caption_gradient">
+
+            <TextView
+                android:id="@+id/album_favorites"
+                style="@style/MainItemText"
+                android:drawableLeft="@drawable/ic_favorites"
+                android:text="@{model.favorites}"
+                tools:text="56"/>
+
+            <TextView
+                android:id="@+id/album_views"
+                style="@style/MainItemText"
+                android:drawableLeft="@drawable/ic_views"
+                android:text="@{model.views}"
+                tools:text="5"/>
+
+        </LinearLayout>
+
+    </RelativeLayout>
+
+</layout>
+

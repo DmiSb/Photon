@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+        <variable
+            name="model"
+            type="ru.dmisb.photon.ui.dialogs.auth.AuthViewModel"/>
+    </data>
+
+    <LinearLayout
+        android:orientation="vertical"
+        style="@style/CustomFullExpand"
+        android:background="@color/colorPrimary"
+        android:padding="@dimen/size_16">
+
+        <RelativeLayout
+            android:id="@+id/auth_email_wrp"
+            style="@style/DialogEditWrapper"
+            app:validEmail="@{model}">
+
+            <android.support.design.widget.TextInputLayout
+                style="@style/DialogEditTextLayout">
+
+                <EditText
+                    android:id="@+id/auth_email_ed"
+                    style="@style/CustomEditText"
+                    android:theme="@style/EditTextTheme"
+                    android:inputType="textEmailAddress"
+                    android:imeOptions="actionNext"
+                    android:nextFocusDown="@+id/auth_password_ed"
+                    android:hint="@string/auth_email"
+                    android:text="@={model.email}"/>
+
+            </android.support.design.widget.TextInputLayout>
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/auth_password_wrp"
+            style="@style/DialogEditWrapper"
+            app:validPassword="@{model}">
+
+            <android.support.design.widget.TextInputLayout
+                style="@style/DialogEditTextLayout">
+
+                <EditText
+                    android:id="@+id/auth_password_ed"
+                    style="@style/CustomEditText"
+                    android:theme="@style/EditTextTheme"
+                    android:inputType="textPassword"
+                    android:maxLength="24"
+                    android:imeOptions="actionDone"
+                    android:hint="@string/auth_password"
+                    android:text="@={model.password}"/>
+
+            </android.support.design.widget.TextInputLayout>
+
+        </RelativeLayout>
+
+        <LinearLayout
+            style="@style/CustomFullWidth"
+            android:layout_marginTop="@dimen/size_16">
+
+            <Button
+                android:id="@+id/auth_ok"
+                style="@style/DialogButton"
+                android:theme="@style/ButtonTheme"
+                android:text="@string/ok"
+                app:canSign="@{model}"/>
+
+            <Button
+                android:id="@+id/auth_cancel"
+                style="@style/DialogButton"
+                android:theme="@style/ButtonTheme"
+                android:text="@string/cancel"/>
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+</layout>
+

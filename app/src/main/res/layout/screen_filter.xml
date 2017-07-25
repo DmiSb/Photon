@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<layout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+        <variable
+            name="model"
+            type="ru.dmisb.photon.screens.selector.filter.FilterViewModel"/>
+    </data>
+
+    <ru.dmisb.photon.screens.selector.filter.FilterView
+        style="@style/CustomFullExpand"
+        android:background="@color/colorPrimary">
+
+        <android.support.v4.widget.NestedScrollView
+            style="@style/CustomFullExpand"
+            android:layout_marginLeft="@dimen/size_16"
+            android:layout_marginRight="@dimen/size_16">
+
+                <LinearLayout
+                    style="@style/CustomFullWidth"
+                    android:orientation="vertical">
+
+                    <include android:id="@+id/filter_params"
+                        layout="@layout/part_params"/>
+
+                    <Button
+                        android:id="@+id/filter_action"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_horizontal"
+                        android:layout_marginTop="@dimen/size_16"
+                        android:layout_marginBottom="@dimen/size_16"
+                        android:paddingLeft="@dimen/size_48"
+                        android:paddingRight="@dimen/size_48"
+                        android:theme="@style/ButtonTheme"
+                        android:enabled="@{model.active}"
+                        app:caption="@{model}"/>
+
+                </LinearLayout>
+
+        </android.support.v4.widget.NestedScrollView>
+
+    </ru.dmisb.photon.screens.selector.filter.FilterView>
+
+</layout>
+

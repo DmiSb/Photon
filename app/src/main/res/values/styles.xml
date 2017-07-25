@@ -1,0 +1,202 @@
+<resources>
+
+    <!-- Base application theme. -->
+    <style name="AppTheme" parent="Theme.AppCompat.Light.NoActionBar">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorAccent</item>
+        <item name="colorAccent">@color/colorAccent</item>
+    </style>
+
+    <style name="AppTheme.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar">
+        <item name="android:textColorPrimary">@color/black</item>
+        <item name="colorControlNormal">@color/black</item>
+        <item name="android:background">@color/colorPrimary</item>
+    </style>
+
+    <style name="AppTheme.PopupOverlay" parent="ThemeOverlay.AppCompat.Light"/>
+
+    <!-- Splash Theme -->
+    <style name="SplashTheme" parent="Theme.AppCompat.Light.NoActionBar">
+        <item name="android:windowBackground">@drawable/splash</item>
+    </style>
+
+    <!-- progress_splash -->
+    <style name="CustomDialog">
+        <item name="android:fullDark">@android:color/transparent</item>
+    </style>
+
+    <!-- Custom -->
+    <style name="CustomFullExpand">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">match_parent</item>
+    </style>
+
+    <style name="CustomFullWidth">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+    </style>
+
+    <style name="CustomFullWidthCenter" parent="CustomFullWidth">
+        <item name="android:gravity">center_horizontal</item>
+    </style>
+
+    <style name="CustomFullHeight">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">match_parent</item>
+    </style>
+
+    <style name="CustomWrap">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+    </style>
+
+    <style name="EditTextTheme" parent="Theme.AppCompat.Light">
+        <item name="colorControlActivated">@color/colorAccent</item>
+    </style>
+
+    <style name="CustomEditText" parent="CustomFullWidth">
+        <item name="android:textColor">@color/black</item>
+        <item name="android:textSize">@dimen/font_16</item>
+        <item name="android:lines">1</item>
+        <item name="android:maxLines">1</item>
+    </style>
+
+    <style name="EditTextAppearance" parent="@style/TextAppearance.AppCompat">
+        <item name="android:textColor">@color/colorAccent</item>
+    </style>
+
+    <style name="ButtonTheme" parent="Base.Widget.AppCompat.Button.Borderless.Colored">
+        <item name="android:textColor">@color/colorPrimary</item>
+        <item name="colorButtonNormal">@color/button_color_selector</item>
+    </style>
+
+    <style name="HintTextColor" parent="TextAppearance.AppCompat.Small">
+        <item name="android:textColor">@color/colorAccent</item>
+    </style>
+
+    <style name="LineStyle">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">@dimen/size_1</item>
+        <item name="android:background">@color/colorPrimaryDark</item>
+    </style>
+
+    <!-- dialog_... -->
+    <style name="DialogButton">
+        <item name="android:layout_width">0dp</item>
+        <item name="android:layout_height">@dimen/size_56</item>
+        <item name="android:layout_weight">1</item>
+        <item name="android:textSize">@dimen/font_16</item>
+    </style>
+
+    <style name="DialogEditWrapper" parent="CustomFullWidth">
+        <item name="android:padding">@dimen/size_4</item>
+        <item name="android:layout_marginBottom">@dimen/size_8</item>
+    </style>
+
+    <style name="DialogEditTextLayout" parent="CustomFullWidth">
+        <item name="hintTextAppearance">@style/HintTextColor</item>
+    </style>
+
+    <!-- screen_main_item -->
+    <style name="MainItemIcon">
+        <item name="android:layout_width">@dimen/size_24</item>
+        <item name="android:layout_height">@dimen/size_24</item>
+        <item name="android:tint">@color/colorPrimary</item>
+    </style>
+
+    <style name="MainItemText">
+        <item name="android:layout_width">0dp</item>
+        <item name="android:layout_height">match_parent</item>
+        <item name="android:layout_weight">1</item>
+        <item name="android:gravity">center</item>
+        <item name="android:textColor">@color/colorPrimary</item>
+        <item name="android:textSize">@dimen/font_16</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+
+    <!-- screen_photo_card -->
+    <style name="PhotoCardTag" parent="CustomWrap">
+        <item name="android:padding">@dimen/size_8</item>
+        <item name="android:textColor">@color/black</item>
+        <item name="android:textSize">@dimen/font_14</item>
+        <item name="android:lines">1</item>
+        <item name="android:maxLines">1</item>
+    </style>
+
+    <!-- screen_profile -->
+    <style name="ProfileButton">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">@dimen/size_56</item>
+        <item name="android:textSize">@dimen/font_16</item>
+    </style>
+
+    <style name="ProfileAlbumCaption" parent="CustomWrap">Search
+        <item name="android:layout_marginTop">@dimen/size_16</item>
+        <item name="android:textColor">@color/colorPrimary</item>
+        <item name="android:textSize">@dimen/font_16</item>
+    </style>
+
+    <!-- screen_filter -->
+    <style name="FilterHeader" parent="CustomFullWidth">
+        <item name="android:gravity">center_horizontal</item>
+        <item name="android:textSize">@dimen/font_16</item>
+        <item name="android:textColor">@color/black</item>
+    </style>
+
+    <style name="FilterIco" parent="CustomWrap"/>
+
+    <!-- screen_search -->
+    <style name="SearchWrapper">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">@dimen/size_60</item>
+        <item name="android:orientation">horizontal</item>
+        <item name="android:paddingLeft">@dimen/size_16</item>
+        <item name="android:paddingRight">@dimen/size_16</item>
+    </style>
+
+    <style name="SearchTextLayout">
+        <item name="android:layout_width">0dp</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_weight">1</item>
+        <item name="android:layout_gravity">center_vertical</item>
+    </style>
+
+    <style name="SearchEditText" parent="CustomEditText">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">match_parent</item>
+        <item name="android:background">@color/transparent</item>
+        <item name="android:textColorHint">@color/colorAccent</item>
+        <item name="android:textColorHighlight">@color/colorAccent</item>
+    </style>
+
+    <style name="SearchImgButton">
+        <item name="android:layout_width">@dimen/size_56</item>
+        <item name="android:layout_height">match_parent</item>
+        <item name="android:paddingLeft">@dimen/size_16</item>
+        <item name="android:paddingTop">@dimen/size_16</item>
+        <item name="android:paddingBottom">@dimen/size_16</item>
+    </style>
+
+    <style name="SearchHint" parent="CustomFullWidth">
+        <item name="android:padding">@dimen/size_16</item>
+        <item name="android:textColor">@color/black</item>
+        <item name="android:textSize">@dimen/font_14</item>
+    </style>
+
+    <!-- screen_new_card -->
+    <style name="NewCardDivider">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">@dimen/size_1</item>
+        <item name="android:background">@color/colorPrimaryDark</item>
+    </style>
+
+    <style name="NewCardSection">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">@dimen/size_56</item>
+        <item name="android:gravity">center</item>
+        <item name="android:textColor">@color/colorPrimaryDark</item>
+        <item name="android:textSize">@dimen/font_14</item>
+    </style>
+
+</resources>

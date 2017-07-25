@@ -1,0 +1,190 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <import type="android.view.View"/>
+        <variable
+            name="model"
+            type="ru.dmisb.photon.screens.new_card.NewCardViewModel"/>
+    </data>
+
+    <ru.dmisb.photon.screens.new_card.NewCardView
+        style="@style/CustomFullExpand"
+        android:background="@color/colorPrimary">
+
+        <android.support.v4.widget.NestedScrollView
+            style="@style/CustomFullExpand">
+
+            <LinearLayout
+                style="@style/CustomFullWidth"
+                android:orientation="vertical">
+
+                <TextView
+                    style="@style/NewCardSection"
+                    android:text="@string/new_card_input_title"/>
+
+                <View
+                    style="@style/NewCardDivider"/>
+
+                <LinearLayout
+                    style="@style/SearchWrapper"
+                    android:orientation="horizontal">
+
+                    <android.support.design.widget.TextInputLayout
+                        style="@style/SearchTextLayout"
+                        app:hintTextAppearance="@style/EditTextAppearance">
+
+                        <EditText
+                            android:id="@+id/new_card_title"
+                            style="@style/SearchEditText"
+                            android:theme="@style/EditTextTheme"
+                            android:inputType="textCapSentences"
+                            android:imeOptions="actionDone"
+                            android:hint="@string/new_card_title"
+                            android:text="@={model.title}"/>
+
+                    </android.support.design.widget.TextInputLayout>
+
+                    <ImageView
+                        android:id="@+id/new_card_title_delete_img"
+                        style="@style/SearchImgButton"
+                        android:src="@drawable/ic_cancel"
+                        tools:ignore="ContentDescription"/>
+
+                </LinearLayout>
+                
+                <View
+                    style="@style/NewCardDivider"/>
+
+                <TextView
+                    style="@style/NewCardSection"
+                    android:text="@string/new_card_input_params"/>
+
+                <LinearLayout
+                    style="@style/CustomFullWidth"
+                    android:layout_marginLeft="@dimen/size_16"
+                    android:layout_marginRight="@dimen/size_16">
+
+                    <include android:id="@+id/new_card_params"
+                        layout="@layout/part_params"/>
+
+                </LinearLayout>
+
+                <TextView
+                    style="@style/NewCardSection"
+                    android:text="@string/new_card_input_tags"/>
+
+                <View
+                    style="@style/NewCardDivider"/>
+
+                <LinearLayout
+                    style="@style/SearchWrapper"
+                    android:orientation="horizontal">
+
+                    <android.support.design.widget.TextInputLayout
+                        style="@style/SearchTextLayout"
+                        app:hintTextAppearance="@style/EditTextAppearance">
+
+                        <EditText
+                            android:id="@+id/new_card_tags"
+                            style="@style/SearchEditText"
+                            android:theme="@style/EditTextTheme"
+                            android:inputType="text"
+                            android:imeOptions="actionDone"
+                            android:hint="@string/new_card_tag"
+                            android:text="@={model.tag}"/>
+
+                    </android.support.design.widget.TextInputLayout>
+
+                    <ImageView
+                        android:id="@+id/new_card_add_tag_img"
+                        style="@style/SearchImgButton"
+                        android:src="@drawable/ic_check"
+                        tools:ignore="ContentDescription"/>
+
+                    <ImageView
+                        android:id="@+id/new_card_tag_delete_img"
+                        style="@style/SearchImgButton"
+                        android:src="@drawable/ic_cancel"
+                        tools:ignore="ContentDescription"/>
+
+                </LinearLayout>
+
+                <View
+                    style="@style/NewCardDivider"/>
+
+                <android.support.v7.widget.RecyclerView
+                    android:id="@+id/new_card_tag_list"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"/>
+
+                <View
+                    style="@style/NewCardDivider"/>
+
+                <TextView
+                    style="@style/NewCardSection"
+                    android:text="@string/new_card_select_album"/>
+
+                <View
+                    style="@style/NewCardDivider"/>
+
+                <android.support.v7.widget.RecyclerView
+                    android:id="@+id/new_card_album_list"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"/>
+
+                <LinearLayout
+                    style="@style/CustomFullWidth"
+                    android:layout_margin="@dimen/size_24"
+                    android:orientation="vertical"
+                    android:gravity="center_horizontal"
+                    android:visibility="@{model.albumCount > 0 ? View.GONE : View.VISIBLE}">
+
+                    <TextView
+                        style="@style/NewCardSection"
+                        android:text="@string/new_card_add_album"/>
+
+                    <Button
+                        android:id="@+id/upload_select_btn"
+                        android:layout_width="wrap_content"
+                        android:layout_height="@dimen/size_56"
+                        android:layout_marginTop="@dimen/size_24"
+                        android:paddingLeft="@dimen/size_32"
+                        android:paddingRight="@dimen/size_32"
+                        android:theme="@style/ButtonTheme"
+                        android:text="@string/new_card_add_album_action"/>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    style="@style/CustomFullWidth"
+                    android:layout_marginTop="@dimen/size_32"
+                    android:layout_marginLeft="@dimen/size_32"
+                    android:layout_marginRight="@dimen/size_32">
+
+                    <Button
+                        android:id="@+id/new_card_ok"
+                        style="@style/DialogButton"
+                        android:theme="@style/ButtonTheme"
+                        android:text="@string/new_card_save"/>
+
+                    <Button
+                        android:id="@+id/new_card_cancel"
+                        style="@style/DialogButton"
+                        android:theme="@style/ButtonTheme"
+                        android:text="@string/cancel"/>
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+        </android.support.v4.widget.NestedScrollView>
+
+    </ru.dmisb.photon.screens.new_card.NewCardView>
+
+</layout>
+
+
