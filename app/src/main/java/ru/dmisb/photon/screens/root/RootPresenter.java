@@ -2,7 +2,6 @@ package ru.dmisb.photon.screens.root;
 
 import android.content.Intent;
 import android.content.pm.PackageManager;
-import android.net.Uri;
 import android.support.annotation.NonNull;
 import android.support.annotation.StringRes;
 import android.support.v4.content.ContextCompat;
@@ -138,7 +137,7 @@ public class RootPresenter extends Presenter<IRootView> implements IRootPresente
     }
 
     @Override
-    public void showNewCardScreen(String albumId, Uri photoUri) {
+    public void showNewCardScreen(String albumId, String photoUri) {
         if (getView() != null)
             getView().showNewCardScreen(albumId, photoUri);
     }

@@ -7,7 +7,7 @@
     <data>
         <variable
             name="params"
-            type="ru.dmisb.photon.screens.selector.filter.FilterViewModel"/>
+            type="ru.dmisb.photon.core.BaseFilterViewModel"/>
     </data>
 
     <com.google.android.flexbox.FlexboxLayout

@@ -1,7 +1,5 @@
 package ru.dmisb.photon.screens.new_card;
 
-import android.net.Uri;
-
 import dagger.Provides;
 import ru.dmisb.photon.R;
 import ru.dmisb.photon.core.BaseScreen;
@@ -14,9 +12,9 @@ import ru.dmisb.photon.flow.ScreenScoper;
 public class NewCardScreen extends BaseScreen<RootComponent> {
 
     private String albumId;
-    private Uri photoUri;
+    private String photoUri;
 
-    public NewCardScreen(String albumId, Uri photoUri) {
+    public NewCardScreen(String albumId, String photoUri) {
         this.albumId = albumId;
         this.photoUri = photoUri;
     }
@@ -64,6 +62,7 @@ public class NewCardScreen extends BaseScreen<RootComponent> {
         void inject(NewCardView view);
         void inject(NewCardPresenter presenter);
         void inject(NewCardModel model);
+        void inject(NewCardAlbumAdapter adapter);
     }
 
     //endregion

@@ -1,18 +1,18 @@
 package ru.dmisb.photon.data.network.req;
 
+import java.io.Serializable;
 import java.util.List;
 
-import ru.dmisb.photon.data.dto.FilterDto;
-
 @SuppressWarnings("unused")
-public class PhotoCardReq {
+public class PhotoCardReq implements Serializable {
     private String album;
     private String title;
     private String photo;
     private List<String> tags;
-    private FilterDto filters;
+    private FilterReq filters;
 
-    public PhotoCardReq(String title, List<String> tags, FilterDto filters) {
+    public PhotoCardReq(String albumId, String title, List<String> tags, FilterReq filters) {
+        this.album = albumId;
         this.title = title;
         this.tags = tags;
         this.filters = filters;
@@ -50,11 +50,11 @@ public class PhotoCardReq {
         this.tags = tags;
     }
 
-    public FilterDto getFilters() {
+    public FilterReq getFilters() {
         return filters;
     }
 
-    public void setFilter(FilterDto filters) {
+    public void setFilter(FilterReq filters) {
         this.filters = filters;
     }
 }

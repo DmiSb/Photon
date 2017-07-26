@@ -9,12 +9,24 @@ import android.view.ViewGroup;
 import java.util.ArrayList;
 import java.util.List;
 
+import javax.inject.Inject;
+
 import ru.dmisb.photon.R;
 import ru.dmisb.photon.databinding.ScreenNewCardAlbumBinding;
+import ru.dmisb.photon.flow.ScreenScoper;
 
-class NewCardAlbumAdapter extends RecyclerView.Adapter<NewCardAlbumAdapter.AlbumHolder> {
+public class NewCardAlbumAdapter extends RecyclerView.Adapter<NewCardAlbumAdapter.AlbumHolder> {
 
     private List<NewCardAlbumViewModel> albumList = new ArrayList<>();
+
+    @Inject
+    NewCardPresenter presenter;
+
+    NewCardAlbumAdapter() {
+        NewCardScreen.Component component = ScreenScoper.getComponent(ScreenScoper.NEW_CARD_SCOPE_NAME);
+        if (component != null)
+            component.inject(this);
+    }
 
     @Override
     public AlbumHolder onCreateViewHolder(ViewGroup parent, int viewType) {
@@ -37,7 +49,9 @@ class NewCardAlbumAdapter extends RecyclerView.Adapter<NewCardAlbumAdapter.Album
                 album.setSelected(false);
             }
 
-            albumList.get(position).setSelected(true);
+            NewCardAlbumViewModel album = albumList.get(position);
+            album.setSelected(true);
+            presenter.onAlbumSelected(album.getId());
             notifyDataSetChanged();
         });
     }

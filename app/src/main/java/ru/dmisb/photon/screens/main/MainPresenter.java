@@ -100,9 +100,9 @@ public class MainPresenter
                             photoCardRealm -> {
                                 getView().addPhotoCard(photoCardRealm);
                                 rootPresenter.hideProgress();
-                            },
+                            }/*,
                             throwable -> rootPresenter.showError(throwable),
-                            () -> rootPresenter.hideProgress()
+                            () -> rootPresenter.hideProgress()*/
                     );
         }
     }

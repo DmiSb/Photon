@@ -11,7 +11,6 @@ import android.util.AttributeSet;
 import ru.dmisb.photon.core.BaseView;
 import ru.dmisb.photon.databinding.ScreenNewCardBinding;
 import ru.dmisb.photon.flow.ScreenScoper;
-import ru.dmisb.photon.screens.selector.filter.FilterViewModel;
 
 @SuppressWarnings("unused")
 public class NewCardView extends BaseView<NewCardPresenter, ScreenNewCardBinding> {
@@ -23,9 +22,9 @@ public class NewCardView extends BaseView<NewCardPresenter, ScreenNewCardBinding
         super(context, attrs);
     }
 
-    void setViewModel(NewCardViewModel viewModel, FilterViewModel filterViewModel) {
+    void setViewModel(NewCardViewModel viewModel) {
         viewDataBinding.setModel(viewModel);
-        viewDataBinding.newCardParams.setParams(filterViewModel);
+        viewDataBinding.newCardParams.setParams(viewModel);
         tagAdapter.addTags(viewModel.getTags());
     }
 

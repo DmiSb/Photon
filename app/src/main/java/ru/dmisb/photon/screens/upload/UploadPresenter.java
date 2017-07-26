@@ -39,7 +39,7 @@ public class UploadPresenter extends BasePresenter<UploadView, UploadModel> impl
     @Override
     public void onActivityResult(int requestCode, Intent data) {
         if (requestCode == Constants.REQUEST_PHOTO_FROM_GALLERY && data != null) {
-            rootPresenter.showNewCardScreen(albumId, data.getData());
+            rootPresenter.showNewCardScreen(albumId, data.getData().toString());
         }
     }
 

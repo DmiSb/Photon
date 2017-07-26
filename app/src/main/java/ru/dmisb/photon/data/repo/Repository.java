@@ -1,8 +1,5 @@
 package ru.dmisb.photon.data.repo;
 
-import android.net.Uri;
-
-import java.io.File;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -11,9 +8,7 @@ import javax.inject.Inject;
 import io.reactivex.Observable;
 import io.reactivex.android.schedulers.AndroidSchedulers;
 import io.reactivex.schedulers.Schedulers;
-import okhttp3.MediaType;
 import okhttp3.MultipartBody;
-import okhttp3.RequestBody;
 import ru.dmisb.photon.App;
 import ru.dmisb.photon.data.dto.AlbumDto;
 import ru.dmisb.photon.data.dto.FilterDto;
@@ -48,10 +43,18 @@ public class Repository {
     private List<String> tagFilter = new ArrayList<>();
     private String searchFilter = "";
 
+    private static Repository instance = null;
+
     //endregion
 
     public Repository() {
         initComponent();
+    }
+
+    public static Repository getInstance() {
+        if (instance == null)
+            instance = new Repository();
+        return instance;
     }
 
     //region ================= User from PreferencesManager =================
@@ -216,13 +219,7 @@ public class Repository {
                 .observeOn(AndroidSchedulers.mainThread());
     }
 
-    public Observable<ImageRes> uploadImage(Uri photoUri) {
-        File imageFile = new File(photoUri.getPath());
-        RequestBody requestBody = RequestBody.create(MediaType.parse("multipart/from-data"), imageFile);
-
-        MultipartBody.Part body =
-                MultipartBody.Part.createFormData("image", imageFile.getName(), requestBody);
-
+    public Observable<ImageRes> uploadImage(MultipartBody.Part body) {
         return restService.uploadImage(getSelfUserId(), getToken(), body)
                 .compose(new RestCallTransformer<>())
                 .subscribeOn(Schedulers.io())

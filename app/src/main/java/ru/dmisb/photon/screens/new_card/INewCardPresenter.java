@@ -11,4 +11,6 @@ interface INewCardPresenter {
 
     void onOkClick();
     void onCancelClick();
+
+    void onAlbumSelected(String albumId);
 }

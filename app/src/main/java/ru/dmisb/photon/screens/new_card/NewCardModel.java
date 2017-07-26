@@ -2,8 +2,10 @@ package ru.dmisb.photon.screens.new_card;
 
 import io.reactivex.Observable;
 import ru.dmisb.photon.core.BaseModel;
+import ru.dmisb.photon.data.network.req.PhotoCardReq;
 import ru.dmisb.photon.data.storage.entities.UserRealm;
 import ru.dmisb.photon.flow.ScreenScoper;
+import ru.dmisb.photon.job.SaveImageJob;
 
 public class NewCardModel extends BaseModel {
 
@@ -21,6 +23,10 @@ public class NewCardModel extends BaseModel {
         } else {
             return Observable.just(this.user);
         }
+    }
+
+    void saveImage(PhotoCardReq photoCard, String photoUri) {
+        jobManager.addJobInBackground(new SaveImageJob(photoCard, photoUri));
     }
 
     //region ================= BaseModel =================

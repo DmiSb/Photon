@@ -5,7 +5,6 @@ import android.content.Intent;
 import android.databinding.DataBindingUtil;
 import android.graphics.PorterDuff;
 import android.graphics.drawable.Drawable;
-import android.net.Uri;
 import android.os.Bundle;
 import android.os.PersistableBundle;
 import android.support.annotation.NonNull;
@@ -206,7 +205,7 @@ public class RootActivity
     }
 
     @Override
-    public void showNewCardScreen(String albumId, Uri photoUri) {
+    public void showNewCardScreen(String albumId, String photoUri) {
         Flow.get(this).replaceHistory(new NewCardScreen(albumId, photoUri), Direction.REPLACE);
     }
 

@@ -6,6 +6,8 @@ import android.util.Log;
 
 import java.util.Collection;
 
+import ru.dmisb.photon.BuildConfig;
+
 @SuppressWarnings("unused")
 public class L {
 
@@ -15,14 +17,14 @@ public class L {
     }
 
     @SuppressWarnings("unused")
-    public interface LogReceiver {
+    interface LogReceiver {
         void log(@NonNull LogType type, @Nullable String tag, @Nullable String msg);
 
         void log(@NonNull LogType type, @Nullable String tag, @Nullable String msg, @Nullable Throwable tr);
     }
 
 
-    public static final LogReceiver DEFAULT_LOG_RECEIVER = new LogReceiver() {
+    private static final LogReceiver DEFAULT_LOG_RECEIVER = new LogReceiver() {
 
         @Override
         public void log(@NonNull LogType type, @Nullable String tag, @Nullable String msg) {
@@ -77,7 +79,7 @@ public class L {
         @NonNull
         private LogReceiver[] logReceivers;
 
-        public LogReceiverArray(@NonNull LogReceiver... receivers) {
+        LogReceiverArray(@NonNull LogReceiver... receivers) {
             logReceivers = receivers;
         }
 
@@ -222,9 +224,8 @@ public class L {
             } else {
                 className = L.class.getName();
             }
-            /*final String tag = className.startsWith(BuildConfig.APPLICATION_ID) ?
-                    className.substring(BuildConfig.APPLICATION_ID.length()) : className;*/
-            final String tag = "IB";
+            final String tag = className.startsWith(BuildConfig.APPLICATION_ID) ?
+                    className.substring(BuildConfig.APPLICATION_ID.length()) : className;
             final String msg = builder.toString();
             if (e == null) {
                 logReceiver.log(logType, tag, msg);

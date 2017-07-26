@@ -24,7 +24,7 @@
                     android:orientation="vertical">
 
                     <include android:id="@+id/filter_params"
-                        layout="@layout/part_params"/>
+                        layout="@layout/part_filter"/>
 
                     <Button
                         android:id="@+id/filter_action"

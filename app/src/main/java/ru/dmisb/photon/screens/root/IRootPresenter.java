@@ -1,7 +1,6 @@
 package ru.dmisb.photon.screens.root;
 
 import android.content.Intent;
-import android.net.Uri;
 import android.support.annotation.NonNull;
 import android.support.annotation.StringRes;
 
@@ -31,5 +30,5 @@ public interface IRootPresenter {
     void showSearchScreen();
 
     void showAlbumScreen(String id, int idx);
-    void showNewCardScreen(String albumId, Uri photoUri);
+    void showNewCardScreen(String albumId, String photoUri);
 }

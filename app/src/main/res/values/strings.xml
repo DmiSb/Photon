@@ -128,5 +128,6 @@
     <string name="new_card_select_album">Выберите альбом</string>
     <string name="new_card_add_album">У вас нет альбомов.\n Добавьте новый, чтобы\n сохранять карточки</string>
     <string name="new_card_add_album_action">Добавить</string>
+    <string name="new_card_album_not_selected">Не выбран альбом</string>
 
 </resources>

@@ -1,29 +1,26 @@
 package ru.dmisb.photon.screens.new_card;
 
-import android.net.Uri;
-
 import ru.dmisb.photon.R;
 import ru.dmisb.photon.core.BasePresenter;
+import ru.dmisb.photon.data.network.req.FilterReq;
+import ru.dmisb.photon.data.network.req.PhotoCardReq;
 import ru.dmisb.photon.data.storage.entities.AlbumRealm;
 import ru.dmisb.photon.flow.ScreenScoper;
-import ru.dmisb.photon.screens.selector.filter.FilterViewModel;
 
 @SuppressWarnings("unused")
 public class NewCardPresenter
         extends BasePresenter<NewCardView, NewCardModel> implements INewCardPresenter {
 
     private NewCardViewModel viewModel = new NewCardViewModel();
-    private FilterViewModel filterViewModel = new FilterViewModel();
     private String albumId;
-    private Uri photoUri;
+    private String photoUri;
 
-    NewCardPresenter(String albumId, Uri photoUri) {
+    NewCardPresenter(String albumId, String photoUri) {
         this.albumId = albumId;
         this.photoUri = photoUri;
     }
 
     //region ================= INewCardPresenter =================
-
 
     @Override
     public void onTitleClearClick() {
@@ -48,12 +45,33 @@ public class NewCardPresenter
 
     @Override
     public void onOkClick() {
+        if (!albumId.isEmpty()) {
+            FilterReq filter = new FilterReq();
+            filter.setDish(viewModel.getDish());
+            filter.setNuances(viewModel.getNuances());
+            filter.setDecor(viewModel.getDecor());
+            filter.setTemperature(viewModel.getTemperature());
+            filter.setLight(viewModel.getLight());
+            filter.setLightDirection(viewModel.getLightDirection());
+            filter.setLightSource(viewModel.getLightSource());
 
+            PhotoCardReq photoCard = new PhotoCardReq(albumId, viewModel.getTitle(), viewModel.getTags(), filter);
+
+            model.saveImage(photoCard, photoUri);
+            rootPresenter.showUploadScreen(albumId);
+        } else {
+            rootPresenter.showMessage(R.string.new_card_album_not_selected);
+        }
     }
 
     @Override
     public void onCancelClick() {
         rootPresenter.showUploadScreen(albumId);
+    }
+
+    @Override
+    public void onAlbumSelected(String albumId) {
+        this.albumId = albumId;
     }
 
     //endregion
@@ -71,7 +89,7 @@ public class NewCardPresenter
     @Override
     protected void initView() {
         if (getView() != null) {
-            getView().setViewModel(viewModel, filterViewModel);
+            getView().setViewModel(viewModel);
 
             model.getUser()
                     .subscribe(
