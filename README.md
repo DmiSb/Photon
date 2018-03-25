@@ -9,6 +9,6 @@
 ·  Network – Retrofit 2, Moshi
 ·  Navigation – Flow
 ·  Crash Reports/ Analytics – Firbase
-·  Image load: Glade
+·  Image load: Glide
 ·  RxJava2
 ````
